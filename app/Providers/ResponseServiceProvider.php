@@ -36,5 +36,16 @@ class ResponseServiceProvider extends ServiceProvider
             return $factory->json($response, $statusCode);
         });
 
+        $factory->macro('error', function (array $errors = [], $message = '', $statusCode = null) use ($factory) {
+            $statusCode = $statusCode ?? 500;
+
+            $response = [
+                'statusCode' => $statusCode,
+                'message' => $message,
+                'data' => $errors,
+            ];
+
+            return $factory->json($response, $statusCode);
+        });
     }
 }

@@ -17,6 +17,13 @@ trait ApiResponse
         return response()->success($data, __($message), Response::HTTP_OK);
     }
 
+    public function error($errors = [], $message = null): JsonResponse
+    {
+        $message = $message ?? __('There is something wrong. Please, try again later!');
+
+        return response()->error($errors, __($message), Response::HTTP_INTERNAL_SERVER_ERROR);
+    }
+
     public function created($data, $message = null): JsonResponse
     {
         $message = $message ?? __('Your execution has been completed successfully');

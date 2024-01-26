@@ -63,4 +63,21 @@ class OrderService
 
         return true;
     }
+
+    /**
+     * Check if the stock is sufficient for the ordered products
+     *
+     * @param array $products
+     * @throws \Exception
+     */
+    private function checkStock(array $products): void
+    {
+        foreach ($products as $product) {
+            $stock = $product['stock'] ?? 0;
+
+            if ($product['quantity'] > $stock) {
+                throw new \Exception('Insufficient stock for product: ' . $product['name']);
+            }
+        }
+    }
 }
