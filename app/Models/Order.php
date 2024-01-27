@@ -10,7 +10,8 @@ class Order extends BaseModel
 {
     protected $fillable = [
         'customer_id',
-        'total'
+        'total',
+        'items'
     ];
 
     protected static function boot()

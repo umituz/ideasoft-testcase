@@ -34,9 +34,38 @@ class OrderFactory extends Factory
             $items[] = [
                 'product_id' => $this->faker->numberBetween(1, 100),
                 'quantity' => $this->faker->numberBetween(1, 10),
+                'unit_price' => $this->faker->randomFloat(2, 0, 1000),
+                'total' => $this->faker->randomFloat(2, 0, 1000),
             ];
         }
 
         return json_encode($items);
+    }
+
+    public function withTotal(float $total): static
+    {
+        return $this->state(function (array $attributes) use ($total) {
+            return [
+                'total' => $total,
+            ];
+        });
+    }
+
+    public function withItems(array $items): static
+    {
+        return $this->state(function (array $attributes) use ($items) {
+            return [
+                'items' => json_encode($items),
+            ];
+        });
+    }
+
+    public function withCustomerId(int $customerId): static
+    {
+        return $this->state(function (array $attributes) use ($customerId) {
+            return [
+                'customer_id' => $customerId,
+            ];
+        });
     }
 }

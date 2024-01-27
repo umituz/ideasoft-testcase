@@ -37,4 +37,13 @@ trait ApiResponse
 
         return response()->success($data, __($message), Response::HTTP_NO_CONTENT);
     }
+
+    public function validationWarning($errors = [], $message = '')
+    {
+        return response()->error(
+            errors: $errors,
+            message: $message,
+            statusCode: Response::HTTP_UNPROCESSABLE_ENTITY
+        );
+    }
 }

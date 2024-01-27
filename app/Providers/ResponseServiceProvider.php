@@ -42,7 +42,7 @@ class ResponseServiceProvider extends ServiceProvider
             $response = [
                 'statusCode' => $statusCode,
                 'message' => $message,
-                'data' => $errors,
+                'errors' => $errors,
             ];
 
             return $factory->json($response, $statusCode);

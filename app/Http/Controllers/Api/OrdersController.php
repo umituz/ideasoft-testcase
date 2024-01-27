@@ -41,15 +41,6 @@ class OrdersController extends BaseController
         );
     }
 
-    public function update(OrderRequest $request, $id)
-    {
-        $item = $this->orderService->updateOrder($id, $request->validated());
-
-        return $this->ok(
-            data: $item
-        );
-    }
-
     public function destroy($id)
     {
         $this->orderService->destroyOrder($id);

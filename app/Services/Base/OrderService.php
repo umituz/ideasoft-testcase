@@ -41,17 +41,8 @@ class OrderService
         $item = $this->orderRepository->create([
             'customer_id' => $data['customer_id'],
             'total' => $data['total'],
+            'items' => json_encode($data['items'])
         ]);
-
-        return new OrderResource($item);
-    }
-
-    public function updateOrder($id, $data)
-    {
-        $item = $this->orderRepository->find($id);
-        $item->customer_id = $data['customer_id'];
-        $item->total = $data['total'];
-        $item->save();
 
         return new OrderResource($item);
     }

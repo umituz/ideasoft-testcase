@@ -12,6 +12,18 @@ class OrderSeeder extends Seeder
      */
     public function run(): void
     {
-        Order::factory(3)->create();
+        //Order::factory(3)->create();
+
+        Order::factory()
+            ->withCustomerId(1)
+            ->withItems([
+                [
+                    'product_id' => 1,
+                    'quantity' => 1,
+                    'unit_price' => 50.5,
+                    'total' => 50.5,
+                ],
+            ])
+            ->create();
     }
 }

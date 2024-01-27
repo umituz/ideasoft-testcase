@@ -2,50 +2,31 @@
 
 namespace App\Http\Requests;
 
-use Illuminate\Contracts\Validation\ValidationRule;
+use App\Rules\ProductStockRule;
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Support\Facades\Validator;
 
 class OrderRequest extends FormRequest
 {
     /**
-     * Determine if the user is authorized to make this request.
-     */
-    //public function authorize(): bool
-    //{
-    //    return false;
-    //}
-
-    /**
      * Get the validation rules that apply to the request.
      *
-     * @return array<string, ValidationRule|array<mixed>|string>
+     * @return array
      */
     public function rules(): array
     {
         return [
             'customer_id' => 'required|exists:customers,id',
-            'items' => 'required|array|min:1', // 'items' bir dizi olmalı ve en az bir öğe içermelidir
-            'items.*.product_id' => 'required|exists:products,id', // Her öğe için 'product_id' gereklidir ve 'products' tablosunda var olmalıdır
-            'items.*.quantity' => 'required|integer|min:1', // Her öğe için 'quantity' bir tam sayı olmalıdır ve en az 1 olmalıdır
+            'items' => ['required', 'array', 'min:1'],
+            'items.*.product_id' => ['required', 'exists:products,id'],
+            'items.*.quantity' => 'required|integer|min:1',
             'total' => 'required|numeric',
         ];
     }
 
     /**
-     * @return array
-     */
-    public function attributes(): array
-    {
-        return [
-            'customer_id' => __('customer'),
-            'items' => __('items'),
-            'items.*.product_id' => __('product_id'),
-            'items.*.quantity' => __('quantity'),
-            'total' => __('total'),
-        ];
-    }
-
-    /**
+     * Get the validation messages that apply to the request.
+     *
      * @return array
      */
     public function messages(): array
@@ -64,5 +45,53 @@ class OrderRequest extends FormRequest
             'total.required' => __(':attribute field is required.'),
             'total.numeric' => __(':attribute field must be a number.'),
         ];
+    }
+
+    /**
+     * Get custom attributes for validator errors.
+     *
+     * @return array
+     */
+    public function attributes(): array
+    {
+        return [
+            'customer_id' => __('customer'),
+            'items' => __('items'),
+            'items.*.product_id' => __('product_id'),
+            'items.*.quantity' => __('quantity'),
+            'total' => __('total'),
+        ];
+    }
+
+    /**
+     * Add the ProductStockRule to the items validation.
+     *
+     * @return void
+     */
+    protected function prepareForValidation()
+    {
+        $this->merge([
+            'items' => $this->validateItems(),
+        ]);
+    }
+
+    /**
+     * Validate the items using the ProductStockRule.
+     *
+     * @return array
+     */
+    private function validateItems(): array
+    {
+        $items = $this->input('items');
+
+        $validator = Validator::make($items, [
+            '*' => new ProductStockRule,
+        ]);
+
+        if ($validator->fails()) {
+            $this->failedValidation($validator);
+        }
+
+        return $items;
     }
 }
