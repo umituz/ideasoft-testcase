@@ -2,38 +2,37 @@
 
 namespace App\Console\Commands;
 
-use App\Models\Product;
 use Illuminate\Console\Command;
+use App\Models\Product;
+use Illuminate\Support\Facades\Mail;
 
 class CheckProductStock extends Command
 {
-    /**
-     * The name and signature of the console command.
-     *
-     * @var string
-     */
     protected $signature = 'product:check-stock';
+    protected $description = 'Check product stock and send warnings via email';
 
-    /**
-     * The console command description.
-     *
-     * @var string
-     */
-    protected $description = 'Check product stocks';
-
-    /**
-     * Execute the console command.
-     */
     public function handle()
     {
         $products = Product::all();
 
         foreach ($products as $product) {
             if ($product->stock <= 0) {
-                $this->warn("Product '{$product->name}' is out of stock!");
+                $this->sendStockWarning($product, 'out_of_stock');
             } elseif ($product->stock < 10) {
-                $this->warn("Product '{$product->name}' is running low on stock. Current stock: {$product->stock}");
+                $this->sendStockWarning($product, 'low_stock');
             }
         }
+    }
+
+    private function sendStockWarning($product, $status)
+    {
+        $email = 'admin@example.com';
+        $subject = ucfirst($status) . " Warning: Product '{$product->name}'";
+
+        Mail::raw("Product '{$product->name}' is $status. Current stock: {$product->stock}", function ($message) use ($email, $subject) {
+            $message->to($email)->subject($subject);
+        });
+
+        $this->info("{$status} email sent for Product '{$product->name}'");
     }
 }

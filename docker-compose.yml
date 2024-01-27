@@ -26,6 +26,7 @@ services:
             - mysql
             - redis
             - pgsql
+            - mailhog
     mysql:
         container_name: sail_mysql
         image: 'mysql/mysql-server:8.0'
@@ -92,6 +93,7 @@ services:
         networks:
             - sail
     pgsql:
+        container_name: sail_pgsql
         image: 'postgres:15'
         ports:
             - '${FORWARD_DB_PORT:-5432}:5432'
@@ -116,6 +118,14 @@ services:
                 - '${DB_USERNAME}'
             retries: 3
             timeout: 5s
+    mailhog:
+        container_name: sail_mailhog
+        image: mailhog/mailhog
+        ports:
+            - "8025:8025"
+            - "1025:1025"
+        networks:
+            - sail
 networks:
     sail:
         driver: bridge
