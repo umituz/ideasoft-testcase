@@ -1,0 +1,20 @@
+<?php
+
+namespace App\Repositories;
+
+use App\Models\Category;
+
+/**
+ * Class CategoryRepository
+ */
+class CategoryRepository extends BaseRepository implements CategoryRepositoryInterface
+{
+    private Category $category;
+
+    public function __construct(Category $category)
+    {
+        parent::__construct($category);
+
+        $this->category = $category;
+    }
+}

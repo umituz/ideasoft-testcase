@@ -19,11 +19,12 @@ class OrderSeeder extends Seeder
             ->withItems([
                 [
                     'product_id' => 1,
-                    'quantity' => 1,
-                    'unit_price' => 50.5,
-                    'total' => 50.5,
+                    'quantity' => 2,
+                    'unit_price' => 1000,
+                    'total' => 200,
                 ],
             ])
+            ->withTotal(2000)
             ->create();
     }
 }

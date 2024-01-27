@@ -2,6 +2,8 @@
 
 namespace App\Providers;
 
+use App\Repositories\CategoryRepository;
+use App\Repositories\CategoryRepositoryInterface;
 use App\Repositories\OrderRepository;
 use App\Repositories\OrderRepositoryInterface;
 use App\Repositories\UserRepository;
@@ -27,6 +29,7 @@ class RepositoryServiceProvider extends ServiceProvider
     public function boot(): void
     {
         $this->app->singleton(UserRepositoryInterface::class, UserRepository::class);
+        $this->app->singleton(CategoryRepositoryInterface::class, CategoryRepository::class);
         $this->app->singleton(OrderRepositoryInterface::class, OrderRepository::class);
     }
 }
