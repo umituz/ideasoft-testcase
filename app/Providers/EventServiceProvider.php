@@ -2,10 +2,13 @@
 
 namespace App\Providers;
 
+use App\Jobs\CheckProductStockJob;
+use App\Services\Base\ProductService;
+use App\Services\Mail\MailService;
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Auth\Listeners\SendEmailVerificationNotification;
 use Illuminate\Foundation\Support\Providers\EventServiceProvider as ServiceProvider;
-use Illuminate\Support\Facades\Event;
+use Illuminate\Support\Facades\App;
 
 class EventServiceProvider extends ServiceProvider
 {
@@ -25,7 +28,9 @@ class EventServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        //
+        App::bindMethod(CheckProductStockJob::class.'@handle', function ($job, $app) {
+            return $job->handle($app->make(ProductService::class), $app->make(MailService::class));
+        });
     }
 
     /**
