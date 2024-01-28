@@ -14,12 +14,6 @@ class MailService
         $this->logService = $logService;
     }
 
-    /**
-     * @param $to
-     * @param $subject
-     * @param $message
-     * @return void
-     */
     public function send($to, $subject, $message): void
     {
         try {

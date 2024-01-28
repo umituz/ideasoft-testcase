@@ -11,7 +11,7 @@ class Order extends BaseModel
     protected $fillable = [
         'customer_id',
         'total',
-        'items'
+        'items',
     ];
 
     protected static function boot()
@@ -22,9 +22,6 @@ class Order extends BaseModel
         static::observe(OrderObserver::class);
     }
 
-    /**
-     * @return BelongsTo
-     */
     public function customer(): BelongsTo
     {
         return $this->belongsTo(Customer::class);

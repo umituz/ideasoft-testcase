@@ -12,7 +12,7 @@ class Authenticate extends Middleware
     /**
      * Handle an incoming request.
      *
-     * @param Request $request
+     * @param  Request  $request
      * @param  Closure  $next
      * @param  string[]  $guards
      * @return mixed
@@ -35,8 +35,7 @@ class Authenticate extends Middleware
     /**
      * Determine if the request should redirect to the login page.
      *
-     * @param Request $request
-     * @param  array  $guards
+     * @param  Request  $request
      * @return bool
      */
     protected function shouldRedirect($request, array $guards)

@@ -34,7 +34,7 @@ class ResponseServiceProvider extends ServiceProvider
                 'data' => $data,
             ];
 
-            $logService->logInfo("Success response: " . json_encode($response));
+            $logService->logInfo('Success response: '.json_encode($response));
 
             return $factory->json($response, $statusCode);
         });
@@ -48,7 +48,7 @@ class ResponseServiceProvider extends ServiceProvider
                 'errors' => $errors,
             ];
 
-            $logService->logInfo("Error response: " . json_encode($response));
+            $logService->logInfo('Error response: '.json_encode($response));
 
             return $factory->json($response, $statusCode);
         });

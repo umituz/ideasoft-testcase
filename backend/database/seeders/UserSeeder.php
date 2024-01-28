@@ -16,16 +16,16 @@ class UserSeeder extends Seeder
 
         DB::table('users')->delete();
 
-        DB::table('users')->insert(array (
-                array (
-                    'name' => 'Ümit UZ',
-                    'email' => 'umituz998@gmail.com',
-                    'email_verified_at' => '2024-01-26 17:03:09',
-                    'password' => bcrypt(123456789),
-                    'remember_token' => 'qOBwUS4j8R',
-                    'created_at' => '2024-01-26 17:03:09',
-                    'updated_at' => '2024-01-26 17:03:09',
-                ),
-        ));
+        DB::table('users')->insert([
+            [
+                'name' => 'Ümit UZ',
+                'email' => 'umituz998@gmail.com',
+                'email_verified_at' => '2024-01-26 17:03:09',
+                'password' => bcrypt(123456789),
+                'remember_token' => 'qOBwUS4j8R',
+                'created_at' => '2024-01-26 17:03:09',
+                'updated_at' => '2024-01-26 17:03:09',
+            ],
+        ]);
     }
 }

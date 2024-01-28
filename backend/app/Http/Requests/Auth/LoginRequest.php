@@ -11,8 +11,6 @@ class LoginRequest extends FormRequest
 {
     /**
      * Get the validation rules that apply to the request.
-     *
-     * @return array
      */
     public function rules(): array
     {
@@ -38,6 +36,4 @@ class LoginRequest extends FormRequest
             'password' => __('validation.attributes.password'),
         ];
     }
-
-
 }

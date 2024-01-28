@@ -53,11 +53,11 @@ class LoginControllerTest extends TestCase
         ]);
 
         $response->assertStatus(422)
-        ->assertJsonStructure([
-            'errors' => ['email', 'password'],
-            'message',
-            'statusCode'
-        ])
+            ->assertJsonStructure([
+                'errors' => ['email', 'password'],
+                'message',
+                'statusCode',
+            ])
             ->assertJsonFragment(['message' => __('Login Failed')]);
     }
 }

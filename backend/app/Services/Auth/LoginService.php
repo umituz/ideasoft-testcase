@@ -6,7 +6,6 @@ use App\Http\Resources\UserResource;
 use App\Repositories\UserRepositoryInterface;
 use App\Traits\Logger;
 use Illuminate\Http\Response;
-use Illuminate\Support\Facades\Auth;
 
 /**
  * Class LoginService

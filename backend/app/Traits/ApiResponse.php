@@ -47,10 +47,6 @@ trait ApiResponse
         );
     }
 
-    /**
-     * @param string $message
-     * @return JsonResponse
-     */
     public function notFound(string $message = 'Not Found'): JsonResponse
     {
         return response()->error([], __($message), Response::HTTP_NOT_FOUND);

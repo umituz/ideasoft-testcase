@@ -16,21 +16,21 @@ class CategorySeeder extends Seeder
 
         \DB::table('categories')->delete();
 
-        \DB::table('categories')->insert(array (
-                array (
-                    'name' => 'Giyim',
-                    'status' => 1,
-                    'deleted_at' => NULL,
-                    'created_at' => '2024-01-27 15:55:32',
-                    'updated_at' => '2024-01-27 15:55:32',
-                ),
-                array (
-                    'name' => 'Elektronik',
-                    'status' => 1,
-                    'deleted_at' => NULL,
-                    'created_at' => '2024-01-27 15:55:32',
-                    'updated_at' => '2024-01-27 15:55:32',
-                ),
-        ));
+        \DB::table('categories')->insert([
+            [
+                'name' => 'Giyim',
+                'status' => 1,
+                'deleted_at' => null,
+                'created_at' => '2024-01-27 15:55:32',
+                'updated_at' => '2024-01-27 15:55:32',
+            ],
+            [
+                'name' => 'Elektronik',
+                'status' => 1,
+                'deleted_at' => null,
+                'created_at' => '2024-01-27 15:55:32',
+                'updated_at' => '2024-01-27 15:55:32',
+            ],
+        ]);
     }
 }

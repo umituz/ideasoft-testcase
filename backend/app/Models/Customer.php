@@ -11,7 +11,7 @@ class Customer extends BaseModel
     protected $fillable = [
         'name',
         'since',
-        'revenue'
+        'revenue',
     ];
 
     protected static function boot()
@@ -22,9 +22,6 @@ class Customer extends BaseModel
         static::observe(CustomerObserver::class);
     }
 
-    /**
-     * @return HasMany
-     */
     public function orders(): HasMany
     {
         return $this->hasMany(Order::class);

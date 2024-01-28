@@ -62,7 +62,7 @@ class OrdersControllerTest extends TestCase
                     'product_id' => $product->id,
                     'quantity' => 2,
                     'unit_price' => 10.99,
-                    'total' => 21.98
+                    'total' => 21.98,
                 ],
             ],
             'total' => 21.98,
@@ -72,7 +72,6 @@ class OrdersControllerTest extends TestCase
 
         $response->assertCreated();
     }
-
 
     /** @test */
     public function it_can_delete_order()

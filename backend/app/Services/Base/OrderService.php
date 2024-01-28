@@ -15,9 +15,6 @@ class OrderService
         $this->orderRepository = $orderRepository;
     }
 
-    /**
-     * @return AnonymousResourceCollection
-     */
     public function getOrderListResource(): AnonymousResourceCollection
     {
         $items = $this->orderRepository->get();
@@ -25,10 +22,6 @@ class OrderService
         return OrderResource::collection($items);
     }
 
-    /**
-     * @param $id
-     * @return OrderResource
-     */
     public function getOrder($id): OrderResource
     {
         $item = $this->orderRepository->find($id);
@@ -41,7 +34,7 @@ class OrderService
         $item = $this->orderRepository->create([
             'customer_id' => $data['customer_id'],
             'total' => $data['total'],
-            'items' => json_encode($data['items'])
+            'items' => json_encode($data['items']),
         ]);
 
         return new OrderResource($item);

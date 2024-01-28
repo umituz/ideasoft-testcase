@@ -8,6 +8,6 @@ class CustomerObserver extends BaseObserver
 {
     public function created(Customer $customer)
     {
-        $this->logService->logInfo(__('Customer created: ') . $customer->id);
+        $this->logService->logInfo(__('Customer created: ').$customer->id);
     }
 }
