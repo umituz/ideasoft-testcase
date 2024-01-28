@@ -2,7 +2,7 @@
 
 namespace App\Services\Base;
 
-use App\Enum\OrderEnum;
+use App\Enum\DiscountEnum;
 use App\Http\Resources\DiscountResource;
 use App\Models\Order;
 use App\Models\Product;
@@ -46,8 +46,8 @@ class DiscountService
      */
     private function applyCustomerDiscount($totalAmount): float|int
     {
-        if ($totalAmount >= OrderEnum::MIN_DISCOUNT_AMOUNT) {
-            return $totalAmount * OrderEnum::MIN_DISCOUNT_PERCENTAGE;
+        if ($totalAmount >= DiscountEnum::MIN_DISCOUNT_AMOUNT) {
+            return $totalAmount * DiscountEnum::MIN_DISCOUNT_PERCENTAGE;
         }
 
         return 0;
@@ -60,36 +60,26 @@ class DiscountService
     private function applyCategoryDiscount(Order $order): float|int
     {
         $categories = $this->getCategoriesForOrder($order);
-
         $categoryDiscount = 0;
 
         foreach ($categories as $categoryId => $quantity) {
-            if ($quantity >= 6) {
-                // İndirimli ürün sayısını hesapla (her 6 üründe bir ücretsiz)
-                $freeItemCount = floor($quantity / 6);
-
-                // İndirimli ürün miktarı kadar ücretsiz ürün fiyatını hesapla
-                $freeItemTotal = $this->getCategoryItemPrice($categoryId) * $freeItemCount;
-
-                // Toplam indirim tutarına ekle
-                $categoryDiscount += $freeItemTotal;
-
-                // Ücretsiz ürünlerin fiyatını toplam tutardan düş
-                $order->total -= $freeItemTotal;
+            if ($categoryId == DiscountEnum::BUY_2_OR_MORE_CATEGORY_ID) {
+                if ($quantity >= DiscountEnum::BUY_2_OR_MORE_QUANTITY) {
+                    $discountedItemCount = floor($quantity / DiscountEnum::BUY_2_OR_MORE_QUANTITY);
+                    $minPriceItem = $this->getMinPriceItem($categoryId);
+                    $discountedItemTotal = $minPriceItem->price * DiscountEnum::BUY_2_OR_MORE_PERCENTAGE * $discountedItemCount;
+                    $categoryDiscount += $discountedItemTotal;
+                    $order->total -= $discountedItemTotal;
+                }
             }
 
-            if ($quantity >= 2) {
-                // Kategorideki ürünlerin en ucuzunu bul
-                $minPriceItem = $this->getMinPriceItem($categoryId);
-
-                // İndirimli ürün miktarı kadar %20 indirim uygula
-                $discountedItemTotal = $minPriceItem->price * 0.20;
-
-                // Toplam indirim tutarına ekle
-                $categoryDiscount += $discountedItemTotal;
-
-                // %20 indirim uygulanan ürünlerin fiyatını toplam tutardan düş
-                $order->total -= $discountedItemTotal;
+            if ($categoryId == DiscountEnum::BUY_5_GET_1_CATEGORY_ID) {
+                if ($quantity >= DiscountEnum::BUY_5_GET_1_QUANTITY) {
+                    $freeItemCount = floor($quantity / DiscountEnum::BUY_5_GET_1_QUANTITY);
+                    $freeItemTotal = $this->getCategoryItemPrice($categoryId) * $freeItemCount;
+                    $categoryDiscount += $freeItemTotal;
+                    $order->total -= $freeItemTotal;
+                }
             }
         }
 
