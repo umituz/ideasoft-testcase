@@ -5,10 +5,16 @@ namespace App\Services\Base;
 use App\Enum\DiscountEnum;
 use App\Http\Resources\DiscountResource;
 use App\Models\Order;
-use App\Models\Product;
 
 class DiscountService
 {
+    private ProductService $productService;
+
+    public function __construct(ProductService $productService)
+    {
+        $this->productService = $productService;
+    }
+
     /**
      * @param $order
      * @return DiscountResource
@@ -99,7 +105,7 @@ class DiscountService
             $productId = $item['product_id'];
             $quantity = $item['quantity'];
 
-            $product = Product::find($productId);
+            $product = $this->productService->find($productId);
             $categoryId = $product->category_id;
 
             if (!isset($categoryQuantities[$categoryId])) {
@@ -118,18 +124,15 @@ class DiscountService
      */
     private function getCategoryItemPrice($categoryId): int
     {
-        $product = Product::where('category_id', $categoryId)->first();
-
-        return $product ? $product->price : 0;
+        return $this->productService->getCategoryItemPrice($categoryId);
     }
 
     /**
      * @param $categoryId
-     * @return mixed
      */
-    private function getMinPriceItem($categoryId): mixed
+    private function getMinPriceItem($categoryId)
     {
-        return Product::where('category_id', $categoryId)->orderBy('price', 'asc')->first();
+        return $this->productService->getMinPriceItem($categoryId);
     }
 
     /**

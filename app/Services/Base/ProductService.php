@@ -17,4 +17,19 @@ class ProductService
     {
         return $this->productRepository->get();
     }
+
+    public function find($id)
+    {
+        return $this->productRepository->find($id);
+    }
+
+    public function getCategoryItemPrice($categoryId)
+    {
+        return $this->productRepository->getCategoryItemPrice($categoryId);
+    }
+
+    public function getMinPriceItem($categoryId)
+    {
+        return $this->productRepository->getMinPriceItem($categoryId);
+    }
 }

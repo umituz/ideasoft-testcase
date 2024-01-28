@@ -7,4 +7,7 @@ namespace App\Repositories;
  */
 interface ProductRepositoryInterface
 {
+    public function getCategoryItemPrice($categoryId);
+
+    public function getMinPriceItem($categoryId);
 }

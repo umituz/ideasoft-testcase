@@ -17,4 +17,16 @@ class ProductRepository extends BaseRepository implements ProductRepositoryInter
 
         $this->product = $product;
     }
+
+    public function getCategoryItemPrice($categoryId)
+    {
+        $product = $this->product->where('category_id', $categoryId)->first();
+
+        return $product ? $product->price : 0;
+    }
+
+    public function getMinPriceItem($categoryId)
+    {
+        return $this->product->where('category_id', $categoryId)->orderBy('price', 'asc')->first();
+    }
 }

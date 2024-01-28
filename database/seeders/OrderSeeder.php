@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use App\Models\Order;
+use App\Models\Product;
 use Illuminate\Database\Seeder;
 
 class OrderSeeder extends Seeder
@@ -12,94 +13,66 @@ class OrderSeeder extends Seeder
      */
     public function run(): void
     {
-        //Order::factory(3)->create();
-
-        //Order::factory()
-        //   ->withCustomerId(1)
-        //   ->withItems([
-        //       [
-        //           'product_id' => 1,
-        //           'quantity' => 2,
-        //           'unit_price' => 1000,
-        //           'total' => 200,
-        //       ],
-        //   ])
-        //   ->withTotal(2000)
-        //   ->create();
-
-        //Order::factory()
-        //    ->withCustomerId(1)
-        //    ->withItems([
-        //       [
-        //            'product_id' => 2,
-        //           'quantity' => 6,
-        //           'unit_price' => 1000,
-        //           'total' => 6000,
-        //       ],
-        //   ])
-        //   ->withTotal(6000)
-        //   ->create();
-
         \DB::table('orders')->delete();
 
-        \DB::table('orders')->insert([
+        $orders = [
             [
-                'id' => 1,
                 'customer_id' => 1,
-                'items' => json_encode([
-                    [
-                        'product_id' => 102,
-                        'quantity' => 10,
-                        'unit_price' => '11.28',
-                        'total' => '112.80',
-                    ],
-                ]),
-                'total' => '112.80',
-                'created_at' => now(),
-                'updated_at' => now(),
+                'items' => [
+                    ['product_id' => 1, 'quantity' => 10],
+                ],
             ],
             [
-                'id' => 2,
                 'customer_id' => 2,
-                'items' => json_encode([
-                    [
-                        'product_id' => 101,
-                        'quantity' => 2,
-                        'unit_price' => '49.50',
-                        'total' => '99.00',
-                    ],
-                    [
-                        'product_id' => 100,
-                        'quantity' => 1,
-                        'unit_price' => '120.75',
-                        'total' => '120.75',
-                    ],
-                ]),
-                'total' => '219.75',
-                'created_at' => now(),
-                'updated_at' => now(),
+                'items' => [
+                    ['product_id' => 2, 'quantity' => 2],
+                    ['product_id' => 3, 'quantity' => 1],
+                ],
             ],
             [
-                'id' => 3,
                 'customer_id' => 3,
-                'items' => json_encode([
-                    [
-                        'product_id' => 102,
-                        'quantity' => 6,
-                        'unit_price' => '11.28',
-                        'total' => '67.68',
-                    ],
-                    [
-                        'product_id' => 100,
-                        'quantity' => 10,
-                        'unit_price' => '120.75',
-                        'total' => '1207.50',
-                    ],
-                ]),
-                'total' => '1275.18',
-                'created_at' => now(),
-                'updated_at' => now(),
+                'items' => [
+                    ['product_id' => 4, 'quantity' => 6],
+                    ['product_id' => 5, 'quantity' => 10],
+                ],
             ],
-        ]);
+        ];
+
+        foreach ($orders as $order) {
+            $orderItems = [];
+            $orderTotal = 0;
+
+            foreach ($order['items'] as $item) {
+                $product = Product::find($item['product_id']);
+
+                if ($product) {
+                    $unitPrice = $product->price;
+                    $total = $unitPrice * $item['quantity'];
+
+                    $orderItems[] = [
+                        'product_id' => $item['product_id'],
+                        'quantity' => $item['quantity'],
+                        'unit_price' => $unitPrice,
+                        'total' => number_format($total, 2, '.', ''),
+                    ];
+
+                    $orderTotal += $total;
+                } else {
+                    $this->command->error("Invalid product ID: {$item['product_id']} in order for customer ID: {$order['customer_id']}");
+                }
+            }
+
+            if (count($orderItems) > 0) {
+                $orderData = [
+                    'customer_id' => $order['customer_id'],
+                    'items' => json_encode($orderItems),
+                    'total' => number_format($orderTotal, 2, '.', ''),
+                    'created_at' => now(),
+                    'updated_at' => now(),
+                ];
+
+                \DB::table('orders')->insert($orderData);
+            }
+        }
     }
 }
