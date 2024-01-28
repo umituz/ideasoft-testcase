@@ -1,0 +1,12 @@
+Info: Success response: {"statusCode":200,"message":"Your execution has been completed successfully","data":[]}
+Info: Customer created: 1
+Info: Order created: 1
+Info: Success response: {"statusCode":200,"message":"Your execution has been completed successfully","data":{"id":1,"customer":{"id":1,"name":"Luz Heidenreich"},"items":[{"productId":28,"quantity":2,"unitPrice":"96.44","total":"565.13"}],"total":642.8}}
+Info: Customer created: 1
+Info: Category created: 1
+Info: Product created: 1
+Info: Order created: 1
+Info: Success response: {"statusCode":201,"message":"Your execution has been completed successfully","data":{"id":1,"customer":{"id":1,"name":"Dr. Marc Kihn MD"},"items":[{"productId":1,"quantity":2,"unitPrice":"10.99","total":"21.98"}],"total":21.98}}
+Info: Customer created: 1
+Info: Order created: 1
+Info: Success response: {"statusCode":204,"message":"Your execution has been completed successfully","data":[]}
