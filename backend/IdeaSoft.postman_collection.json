@@ -1,0 +1,279 @@
+{
+	"info": {
+		"_postman_id": "50946ff1-cb36-46df-a166-5102b6690fc2",
+		"name": "IdeaSoft",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "32043497"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "Register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Ümit UZ\",\r\n    \"email\": \"umituz9999@gmail.com\",\r\n    \"password\": \"123456789\",\r\n    \"password_confirmation\": \"123456789\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{apiUrl}}/auth/register",
+							"host": [
+								"{{apiUrl}}"
+							],
+							"path": [
+								"auth",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var jsonData = pm.response.json();\r",
+									"\r",
+									"pm.environment.set(\"token\", jsonData.data.token);\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"umituz998@gmail.com\",\r\n    \"password\": \"123456789\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{apiUrl}}/auth/login",
+							"host": [
+								"{{apiUrl}}"
+							],
+							"path": [
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Orders",
+			"item": [
+				{
+					"name": "Get Order List",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost/api/orders",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"api",
+								"orders"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Show Order Details",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost/api/orders/:id",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"api",
+								"orders",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create New Order",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": 1,\n    \"customer_id\": 1,\n    \"items\": [\n        {\n            \"product_id\": 1,\n            \"quantity\": 2,\n            \"unitPrice\": \"49.50\",\n            \"total\": \"99.00\"\n        },\n        {\n            \"product_id\": 2,\n            \"quantity\": 1,\n            \"unitPrice\": \"120.75\",\n            \"total\": \"120.75\"\n        }\n    ],\n    \"total\": \"219.75\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost/api/orders",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"api",
+								"orders"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Order",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"customer_id\": 1,\n    \"total\": 100\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost/api/orders/:id",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"api",
+								"orders",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "4"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Apply Discount to Order",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiMWM3Y2Y0MDljNzNlMzIxNjEyOWNmNzk1MDUwNGM3MTRkMjFkYzhmNDg0ZDZkMzQ5YWE4ZjdkNTc4YzdjMzdhODZhMThlMmQ4YmIyNDU0OWQiLCJpYXQiOjE3MDYzNjc5MDIuNDAwODYyLCJuYmYiOjE3MDYzNjc5MDIuNDAwODYzLCJleHAiOjE3MjIwOTI3MDIuMzk1MjA3LCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.ZPd2wBDwXg1iOoMkEVhwPCMDxwv1qgii8hXP92lq_BmzTzQMNqZRMJsvaEAF5n-Ru7hXgIL-oW7ge-wYWfZd06nIEI0siHFy_xWBPyzepw7oGd9hzh4uAUALQ98t7N3PI7tWN_Apj7TJdLXOv8cqcGntPesOSAu_OFBXcxajigkhZ6myHprliFiGu0of96sDJ13CbL3HMZ4pDYljJqDAwmYNAlu0EKVsEWYotu_z7EpfadAogPWthSGBZLVvLDg_07fPQmNXa6cdU3lPVxfrrbXkXidQm7__a-vPxif_BMPDs9F2JwKVMb9nZ2NtTwO1nfGpod_91hLKei0CzHjupiyor5nl_2FOZSrcUdXTsgj6SOnqnwy08iMDR1kcgqdtceT3snLawpZsg4rvvll1cGFUL5h1hX7EUkC5ESKFybBd3UTZUBGcmw1qflNTpthAaAwq8q0-BacCrk1_An2o5_3VAEIke-uU6pf2Ut8gVQ14od9zDzklFpMXWCKiOttxQUi2uMezvt_CDoVa134lkdib3iTi6paLagmgPuzxc7EHjKXjQbCZhq6pHMavznHfPzC94SBL23Jk72pU3dFkBbR4bRCXoYi9tdGkKtDuEjLdHFsxuk__NPjl7vz9ZtYdk2SemjZLE2_NfJ0x-dlNxFrCKmSOzlAs17ZYLhOYcNU",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost/api/orders/:id/discounts",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"api",
+								"orders",
+								":id",
+								"discounts"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "apiUrl",
+			"value": "http://localhost/api",
+			"type": "string"
+		}
+	]
+}

@@ -104,16 +104,24 @@
 				{
 					"name": "Get Order List",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "1|uHNO0rrO2XEATzpLmLzXfK3LC7N8zsTaC8dWjxuxcf058f11",
+									"type": "string"
+								}
+							]
+						},
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost/api/orders",
-							"protocol": "http",
+							"raw": "{{apiUrl}}/orders",
 							"host": [
-								"localhost"
+								"{{apiUrl}}"
 							],
 							"path": [
-								"api",
 								"orders"
 							]
 						}
@@ -123,16 +131,24 @@
 				{
 					"name": "Show Order Details",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "1|uHNO0rrO2XEATzpLmLzXfK3LC7N8zsTaC8dWjxuxcf058f11",
+									"type": "string"
+								}
+							]
+						},
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost/api/orders/:id",
-							"protocol": "http",
+							"raw": "{{apiUrl}}/orders/:id",
 							"host": [
-								"localhost"
+								"{{apiUrl}}"
 							],
 							"path": [
-								"api",
 								"orders",
 								":id"
 							],
@@ -149,11 +165,21 @@
 				{
 					"name": "Create New Order",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "1|uHNO0rrO2XEATzpLmLzXfK3LC7N8zsTaC8dWjxuxcf058f11",
+									"type": "string"
+								}
+							]
+						},
 						"method": "POST",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"id\": 1,\n    \"customer_id\": 1,\n    \"items\": [\n        {\n            \"product_id\": 1,\n            \"quantity\": 2,\n            \"unitPrice\": \"49.50\",\n            \"total\": \"99.00\"\n        },\n        {\n            \"product_id\": 2,\n            \"quantity\": 1,\n            \"unitPrice\": \"120.75\",\n            \"total\": \"120.75\"\n        }\n    ],\n    \"total\": \"219.75\"\n}",
+							"raw": "{\n    \"id\": 1,\n    \"customer_id\": 1,\n    \"items\": [\n        {\n            \"product_id\": 1,\n            \"quantity\": 2,\n            \"unit_price\": \"49.50\",\n            \"total\": \"99.00\"\n        },\n        {\n            \"product_id\": 2,\n            \"quantity\": 1,\n            \"unit_price\": \"120.75\",\n            \"total\": \"120.75\"\n        }\n    ],\n    \"total\": \"219.75\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -161,13 +187,11 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost/api/orders",
-							"protocol": "http",
+							"raw": "{{apiUrl}}/orders",
 							"host": [
-								"localhost"
+								"{{apiUrl}}"
 							],
 							"path": [
-								"api",
 								"orders"
 							]
 						}
@@ -177,6 +201,16 @@
 				{
 					"name": "Delete Order",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "1|uHNO0rrO2XEATzpLmLzXfK3LC7N8zsTaC8dWjxuxcf058f11",
+									"type": "string"
+								}
+							]
+						},
 						"method": "DELETE",
 						"header": [],
 						"body": {
@@ -189,13 +223,11 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost/api/orders/:id",
-							"protocol": "http",
+							"raw": "{{apiUrl}}/orders/:id",
 							"host": [
-								"localhost"
+								"{{apiUrl}}"
 							],
 							"path": [
-								"api",
 								"orders",
 								":id"
 							],
@@ -217,7 +249,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiMWM3Y2Y0MDljNzNlMzIxNjEyOWNmNzk1MDUwNGM3MTRkMjFkYzhmNDg0ZDZkMzQ5YWE4ZjdkNTc4YzdjMzdhODZhMThlMmQ4YmIyNDU0OWQiLCJpYXQiOjE3MDYzNjc5MDIuNDAwODYyLCJuYmYiOjE3MDYzNjc5MDIuNDAwODYzLCJleHAiOjE3MjIwOTI3MDIuMzk1MjA3LCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.ZPd2wBDwXg1iOoMkEVhwPCMDxwv1qgii8hXP92lq_BmzTzQMNqZRMJsvaEAF5n-Ru7hXgIL-oW7ge-wYWfZd06nIEI0siHFy_xWBPyzepw7oGd9hzh4uAUALQ98t7N3PI7tWN_Apj7TJdLXOv8cqcGntPesOSAu_OFBXcxajigkhZ6myHprliFiGu0of96sDJ13CbL3HMZ4pDYljJqDAwmYNAlu0EKVsEWYotu_z7EpfadAogPWthSGBZLVvLDg_07fPQmNXa6cdU3lPVxfrrbXkXidQm7__a-vPxif_BMPDs9F2JwKVMb9nZ2NtTwO1nfGpod_91hLKei0CzHjupiyor5nl_2FOZSrcUdXTsgj6SOnqnwy08iMDR1kcgqdtceT3snLawpZsg4rvvll1cGFUL5h1hX7EUkC5ESKFybBd3UTZUBGcmw1qflNTpthAaAwq8q0-BacCrk1_An2o5_3VAEIke-uU6pf2Ut8gVQ14od9zDzklFpMXWCKiOttxQUi2uMezvt_CDoVa134lkdib3iTi6paLagmgPuzxc7EHjKXjQbCZhq6pHMavznHfPzC94SBL23Jk72pU3dFkBbR4bRCXoYi9tdGkKtDuEjLdHFsxuk__NPjl7vz9ZtYdk2SemjZLE2_NfJ0x-dlNxFrCKmSOzlAs17ZYLhOYcNU",
+									"value": "1|uHNO0rrO2XEATzpLmLzXfK3LC7N8zsTaC8dWjxuxcf058f11",
 									"type": "string"
 								}
 							]
@@ -225,13 +257,11 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost/api/orders/:id/discounts",
-							"protocol": "http",
+							"raw": "{{apiUrl}}/orders/:id/discounts",
 							"host": [
-								"localhost"
+								"{{apiUrl}}"
 							],
 							"path": [
-								"api",
 								"orders",
 								":id",
 								"discounts"
@@ -272,7 +302,7 @@
 	"variable": [
 		{
 			"key": "apiUrl",
-			"value": "http://localhost/api",
+			"value": "http://localhost:8000/api",
 			"type": "string"
 		}
 	]
