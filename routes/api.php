@@ -11,7 +11,7 @@ Route::group(['prefix' => 'auth', 'as' => 'api.'], function () {
     Route::post('/login', [LoginController::class, 'login'])->name('login');
 });
 
-Route::group(['middleware' => 'api'], function () {
+Route::group(['middleware' => 'auth:sanctum'], function () {
     Route::group(['prefix' => '/orders', 'as' => 'orders.'], function () {
         Route::get('/', [OrdersController::class, 'index'])->name('index');
         Route::get('/{id}', [OrdersController::class, 'show'])->name('show');

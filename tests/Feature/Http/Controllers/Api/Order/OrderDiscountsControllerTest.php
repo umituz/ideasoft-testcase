@@ -1,6 +1,6 @@
 <?php
 
-namespace Tests\Feature\Http\Controllers;
+namespace Feature\Http\Controllers\Api\Order;
 
 use App\Models\Category;
 use App\Models\Order;
@@ -38,5 +38,15 @@ class OrderDiscountsControllerTest extends TestCase
         $response = $this->getJson("/api/orders/{$order->id}/discounts");
 
         $response->assertOk();
+    }
+
+    /** @test */
+    public function it_returns_not_found_for_invalid_order_id()
+    {
+        $invalidOrderId = 999;
+
+        $response = $this->getJson("/api/orders/{$invalidOrderId}/discounts");
+
+        $response->assertNotFound();
     }
 }

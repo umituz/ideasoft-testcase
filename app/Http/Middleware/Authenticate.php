@@ -2,16 +2,49 @@
 
 namespace App\Http\Middleware;
 
+use Closure;
+use Illuminate\Auth\AuthenticationException;
 use Illuminate\Auth\Middleware\Authenticate as Middleware;
 use Illuminate\Http\Request;
 
 class Authenticate extends Middleware
 {
     /**
-     * Get the path the user should be redirected to when they are not authenticated.
+     * Handle an incoming request.
+     *
+     * @param Request $request
+     * @param  Closure  $next
+     * @param  string[]  $guards
+     * @return mixed
+     *
+     * @throws AuthenticationException
      */
-    protected function redirectTo(Request $request): ?string
+    public function handle($request, $next, ...$guards)
     {
-        return $request->expectsJson() ? null : route('login');
+        $this->authenticate($request, $guards);
+
+        $response = $next($request);
+
+        if ($this->shouldRedirect($request, $guards)) {
+            return redirect()->guest(route('login'));
+        }
+
+        return $response;
+    }
+
+    /**
+     * Determine if the request should redirect to the login page.
+     *
+     * @param Request $request
+     * @param  array  $guards
+     * @return bool
+     */
+    protected function shouldRedirect($request, array $guards)
+    {
+        if ($request->expectsJson() || $request->is('api/*')) {
+            return false;
+        }
+
+        return true;
     }
 }

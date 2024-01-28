@@ -55,4 +55,13 @@ trait ApiResponse
     {
         return response()->error([], __($message), Response::HTTP_NOT_FOUND);
     }
+
+    public function unauthorized($errors = [])
+    {
+        return response()->error(
+            errors: $errors,
+            statusCode: Response::HTTP_UNAUTHORIZED,
+            message: __('Please, login and try again!')
+        );
+    }
 }

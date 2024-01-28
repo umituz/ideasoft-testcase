@@ -71,3 +71,154 @@ Info: Success response: {"statusCode":201,"message":"Your execution has been com
 Info: Customer created: 1
 Info: Order created: 1
 Info: Success response: {"statusCode":204,"message":"Your execution has been completed successfully","data":[]}
+Info: Category created: 1
+Info: Product created: 1
+Info: Customer created: 1
+Info: Order created: 1
+Info: Customer created: 1
+Info: Order created: 1
+Info: Customer created: 2
+Info: Category created: 1
+Info: Product created: 1
+Info: Category created: 2
+Info: Category created: 1
+Info: Product created: 1
+Info: Customer created: 1
+Info: Order created: 1
+Info: Success response: {"statusCode":200,"message":"Your execution has been completed successfully","data":{"orderId":1,"discounts":[{"discountReason":"BUY_5_GET_1","discountAmount":"10.80","subtotal":"124.25"}],"totalDiscount":"10.80","discountedTotal":"124.25"}}
+Info: Error response: {"statusCode":404,"message":"Order with ID 999 not found.","errors":[]}
+Info: Success response: {"statusCode":200,"message":"Your execution has been completed successfully","data":[]}
+Info: Customer created: 1
+Info: Order created: 1
+Info: Success response: {"statusCode":200,"message":"Your execution has been completed successfully","data":{"id":1,"customer":{"id":1,"name":"Fern Kovacek"},"items":[{"productId":33,"quantity":5,"unitPrice":"234.83","total":"454.11"},{"productId":16,"quantity":4,"unitPrice":"211.26","total":"399.65"},{"productId":42,"quantity":5,"unitPrice":"627.32","total":"718.87"},{"productId":50,"quantity":9,"unitPrice":"494.60","total":"103.95"}],"total":464.35}}
+Info: Customer created: 1
+Info: Category created: 1
+Info: Product created: 1
+Info: Order created: 1
+Info: Success response: {"statusCode":201,"message":"Your execution has been completed successfully","data":{"id":1,"customer":{"id":1,"name":"Kristina Cormier PhD"},"items":[{"productId":1,"quantity":2,"unitPrice":"10.99","total":"21.98"}],"total":21.98}}
+Info: Customer created: 1
+Info: Order created: 1
+Info: Success response: {"statusCode":204,"message":"Your execution has been completed successfully","data":[]}
+Info: Category created: 1
+Info: Product created: 1
+Info: Customer created: 1
+Info: Order created: 1
+Info: Customer created: 1
+Info: Order created: 1
+Info: Customer created: 2
+Info: Category created: 1
+Info: Product created: 1
+Info: Category created: 2
+Info: Category created: 1
+Info: Product created: 1
+Info: Customer created: 1
+Info: Order created: 1
+Info: Success response: {"statusCode":200,"message":"Your execution has been completed successfully","data":{"orderId":1,"discounts":[{"discountReason":"BUY_5_GET_1","discountAmount":"28.24","subtotal":"324.71"}],"totalDiscount":"28.24","discountedTotal":"324.71"}}
+Info: Error response: {"statusCode":404,"message":"Order with ID 999 not found.","errors":[]}
+Info: Success response: {"statusCode":200,"message":"Your execution has been completed successfully","data":[]}
+Info: Customer created: 1
+Info: Order created: 1
+Info: Success response: {"statusCode":200,"message":"Your execution has been completed successfully","data":{"id":1,"customer":{"id":1,"name":"Weston Heidenreich"},"items":[{"productId":21,"quantity":3,"unitPrice":"66.07","total":"631.96"},{"productId":90,"quantity":8,"unitPrice":"95.59","total":"105.21"}],"total":461.4}}
+Info: Customer created: 1
+Info: Category created: 1
+Info: Product created: 1
+Info: Order created: 1
+Info: Success response: {"statusCode":201,"message":"Your execution has been completed successfully","data":{"id":1,"customer":{"id":1,"name":"Dr. Harley Grady"},"items":[{"productId":1,"quantity":2,"unitPrice":"10.99","total":"21.98"}],"total":21.98}}
+Info: Customer created: 1
+Info: Order created: 1
+Info: Success response: {"statusCode":204,"message":"Your execution has been completed successfully","data":[]}
+Info: Category created: 1
+Info: Product created: 1
+Info: Customer created: 1
+Info: Order created: 1
+Info: Customer created: 1
+Info: Order created: 1
+Info: Customer created: 2
+Info: Category created: 1
+Info: Product created: 1
+Info: Category created: 2
+Info: Category created: 1
+Info: Product created: 1
+Info: Customer created: 1
+Info: Order created: 1
+Info: Success response: {"statusCode":200,"message":"Your execution has been completed successfully","data":{"orderId":1,"discounts":[{"discountReason":"BUY_5_GET_1","discountAmount":"12.85","subtotal":"147.80"}],"totalDiscount":"12.85","discountedTotal":"147.80"}}
+Info: Error response: {"statusCode":404,"message":"Order with ID 999 not found.","errors":[]}
+Info: Success response: {"statusCode":200,"message":"Your execution has been completed successfully","data":[]}
+Info: Customer created: 1
+Info: Order created: 1
+Info: Success response: {"statusCode":200,"message":"Your execution has been completed successfully","data":{"id":1,"customer":{"id":1,"name":"Dawson Johnston"},"items":[{"productId":39,"quantity":3,"unitPrice":"739.82","total":"939.48"},{"productId":61,"quantity":4,"unitPrice":"312.27","total":"571.54"}],"total":32.47}}
+Info: Customer created: 1
+Info: Category created: 1
+Info: Product created: 1
+Info: Order created: 1
+Info: Success response: {"statusCode":201,"message":"Your execution has been completed successfully","data":{"id":1,"customer":{"id":1,"name":"Dr. Gunner Denesik"},"items":[{"productId":1,"quantity":2,"unitPrice":"10.99","total":"21.98"}],"total":21.98}}
+Info: Customer created: 1
+Info: Order created: 1
+Info: Success response: {"statusCode":204,"message":"Your execution has been completed successfully","data":[]}
+Info: Category created: 1
+Info: Product created: 1
+Info: Customer created: 1
+Info: Order created: 1
+Info: Customer created: 1
+Info: Order created: 1
+Info: Customer created: 2
+Info: Category created: 1
+Info: Product created: 1
+Info: Category created: 2
+Info: Error response: {"statusCode":500,"message":"Login Failed","errors":{"email":"The provided credentials are incorrect!"}}
+Info: Category created: 1
+Info: Product created: 1
+Info: Customer created: 1
+Info: Order created: 1
+Info: Success response: {"statusCode":200,"message":"Your execution has been completed successfully","data":{"orderId":1,"discounts":[{"discountReason":"BUY_5_GET_1","discountAmount":"5.02","subtotal":"57.73"}],"totalDiscount":"5.02","discountedTotal":"57.73"}}
+Info: Error response: {"statusCode":404,"message":"Order with ID 999 not found.","errors":[]}
+Info: Success response: {"statusCode":200,"message":"Your execution has been completed successfully","data":[]}
+Info: Customer created: 1
+Info: Order created: 1
+Info: Success response: {"statusCode":200,"message":"Your execution has been completed successfully","data":{"id":1,"customer":{"id":1,"name":"Leila Hahn"},"items":[{"productId":97,"quantity":2,"unitPrice":"600.46","total":"59.15"},{"productId":10,"quantity":2,"unitPrice":"113.70","total":"988.36"},{"productId":21,"quantity":9,"unitPrice":"332.84","total":"946.78"},{"productId":33,"quantity":9,"unitPrice":"413.40","total":"413.77"},{"productId":4,"quantity":3,"unitPrice":"865.62","total":"573.34"}],"total":280.59}}
+Info: Customer created: 1
+Info: Category created: 1
+Info: Product created: 1
+Info: Order created: 1
+Info: Success response: {"statusCode":201,"message":"Your execution has been completed successfully","data":{"id":1,"customer":{"id":1,"name":"Jeramy DuBuque"},"items":[{"productId":1,"quantity":2,"unitPrice":"10.99","total":"21.98"}],"total":21.98}}
+Info: Customer created: 1
+Info: Order created: 1
+Info: Success response: {"statusCode":204,"message":"Your execution has been completed successfully","data":[]}
+Info: Success response: {"statusCode":200,"message":"User Logged In","data":{"user":{"id":1,"name":"\u00dcmit UZ","email":"umituz998@gmail.com"},"token":"1|4W9Ef1sBOGQNs7ExmX95pR7z1X8SusG4bnZigHL05a397082"}}
+Info: Success response: {"statusCode":200,"message":"Your execution has been completed successfully","data":[{"id":3,"customer":{"id":3,"name":"\u0130sa Sonuyumaz"},"items":[{"productId":4,"quantity":6,"unitPrice":"22.80","total":"136.80"},{"productId":5,"quantity":10,"unitPrice":"12.95","total":"129.50"}],"total":"266.30"},{"id":2,"customer":{"id":2,"name":"Kaptan Devopuz"},"items":[{"productId":2,"quantity":2,"unitPrice":"49.50","total":"99.00"},{"productId":3,"quantity":1,"unitPrice":"11.28","total":"11.28"}],"total":"110.28"},{"id":1,"customer":{"id":1,"name":"T\u00fcrker J\u00f6nt\u00fcrk"},"items":[{"productId":1,"quantity":10,"unitPrice":"120.75","total":"1,207.50"}],"total":"1207.50"}]}
+Info: Success response: {"statusCode":200,"message":"Your execution has been completed successfully","data":[{"id":3,"customer":{"id":3,"name":"\u0130sa Sonuyumaz"},"items":[{"productId":4,"quantity":6,"unitPrice":"22.80","total":"136.80"},{"productId":5,"quantity":10,"unitPrice":"12.95","total":"129.50"}],"total":"266.30"},{"id":2,"customer":{"id":2,"name":"Kaptan Devopuz"},"items":[{"productId":2,"quantity":2,"unitPrice":"49.50","total":"99.00"},{"productId":3,"quantity":1,"unitPrice":"11.28","total":"11.28"}],"total":"110.28"},{"id":1,"customer":{"id":1,"name":"T\u00fcrker J\u00f6nt\u00fcrk"},"items":[{"productId":1,"quantity":10,"unitPrice":"120.75","total":"1,207.50"}],"total":"1207.50"}]}
+Info: Success response: {"statusCode":200,"message":"Your execution has been completed successfully","data":[{"id":3,"customer":{"id":3,"name":"\u0130sa Sonuyumaz"},"items":[{"productId":4,"quantity":6,"unitPrice":"22.80","total":"136.80"},{"productId":5,"quantity":10,"unitPrice":"12.95","total":"129.50"}],"total":"266.30"},{"id":2,"customer":{"id":2,"name":"Kaptan Devopuz"},"items":[{"productId":2,"quantity":2,"unitPrice":"49.50","total":"99.00"},{"productId":3,"quantity":1,"unitPrice":"11.28","total":"11.28"}],"total":"110.28"},{"id":1,"customer":{"id":1,"name":"T\u00fcrker J\u00f6nt\u00fcrk"},"items":[{"productId":1,"quantity":10,"unitPrice":"120.75","total":"1,207.50"}],"total":"1207.50"}]}
+Info: Success response: {"statusCode":200,"message":"Your execution has been completed successfully","data":[{"id":3,"customer":{"id":3,"name":"\u0130sa Sonuyumaz"},"items":[{"productId":4,"quantity":6,"unitPrice":"22.80","total":"136.80"},{"productId":5,"quantity":10,"unitPrice":"12.95","total":"129.50"}],"total":"266.30"},{"id":2,"customer":{"id":2,"name":"Kaptan Devopuz"},"items":[{"productId":2,"quantity":2,"unitPrice":"49.50","total":"99.00"},{"productId":3,"quantity":1,"unitPrice":"11.28","total":"11.28"}],"total":"110.28"},{"id":1,"customer":{"id":1,"name":"T\u00fcrker J\u00f6nt\u00fcrk"},"items":[{"productId":1,"quantity":10,"unitPrice":"120.75","total":"1,207.50"}],"total":"1207.50"}]}
+Info: Error response: {"statusCode":401,"message":"Please, login and try again!","errors":[]}
+Info: Error response: {"statusCode":401,"message":"Please, login and try again!","errors":[]}
+Info: Success response: {"statusCode":200,"message":"Your execution has been completed successfully","data":[{"id":3,"customer":{"id":3,"name":"\u0130sa Sonuyumaz"},"items":[{"productId":4,"quantity":6,"unitPrice":"22.80","total":"136.80"},{"productId":5,"quantity":10,"unitPrice":"12.95","total":"129.50"}],"total":"266.30"},{"id":2,"customer":{"id":2,"name":"Kaptan Devopuz"},"items":[{"productId":2,"quantity":2,"unitPrice":"49.50","total":"99.00"},{"productId":3,"quantity":1,"unitPrice":"11.28","total":"11.28"}],"total":"110.28"},{"id":1,"customer":{"id":1,"name":"T\u00fcrker J\u00f6nt\u00fcrk"},"items":[{"productId":1,"quantity":10,"unitPrice":"120.75","total":"1,207.50"}],"total":"1207.50"}]}
+Info: Error response: {"statusCode":401,"message":"Please, login and try again!","errors":[]}
+Info: Category created: 1
+Info: Product created: 1
+Info: Customer created: 1
+Info: Order created: 1
+Info: Customer created: 1
+Info: Order created: 1
+Info: Customer created: 2
+Info: Category created: 1
+Info: Product created: 1
+Info: Category created: 2
+Info: Success response: {"statusCode":200,"message":"User Logged In","data":{"user":{"id":1,"name":"Mr. Landen Herzog","email":"watsica.lessie@example.net"},"token":"1|Tujiau1KJmxX6HVCRMvvOWXS6jyGfrVDiIxJAcFz8901a613"}}
+Info: Error response: {"statusCode":500,"message":"Login Failed","errors":{"email":"The provided credentials are incorrect!"}}
+Info: Category created: 1
+Info: Product created: 1
+Info: Customer created: 1
+Info: Order created: 1
+Info: Error response: {"statusCode":401,"message":"Please, login and try again!","errors":[]}
+Info: Error response: {"statusCode":401,"message":"Please, login and try again!","errors":[]}
+Info: Error response: {"statusCode":401,"message":"Please, login and try again!","errors":[]}
+Info: Customer created: 1
+Info: Order created: 1
+Info: Error response: {"statusCode":401,"message":"Please, login and try again!","errors":[]}
+Info: Customer created: 1
+Info: Category created: 1
+Info: Product created: 1
+Info: Error response: {"statusCode":401,"message":"Please, login and try again!","errors":[]}
+Info: Customer created: 1
+Info: Order created: 1
+Info: Error response: {"statusCode":401,"message":"Please, login and try again!","errors":[]}

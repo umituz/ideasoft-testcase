@@ -1,6 +1,6 @@
 <?php
 
-namespace Feature\Http\Controllers;
+namespace Feature\Http\Controllers\Api\Order;
 
 use App\Models\Category;
 use App\Models\Customer;

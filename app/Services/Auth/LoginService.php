@@ -6,6 +6,7 @@ use App\Http\Resources\UserResource;
 use App\Repositories\UserRepositoryInterface;
 use App\Traits\Logger;
 use Illuminate\Http\Response;
+use Illuminate\Support\Facades\Auth;
 
 /**
  * Class LoginService
@@ -38,7 +39,7 @@ class LoginService
         }
 
         $user = auth()->user();
-        $token = $user->createToken('authToken')->accessToken;
+        $token = $user->createToken('authToken')->plainTextToken;
         $item = new UserResource($user);
 
         return [
