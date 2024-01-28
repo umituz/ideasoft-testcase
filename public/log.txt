@@ -44,3 +44,30 @@ Info: Success response: {"statusCode":201,"message":"Your execution has been com
 Info: Customer created: 1
 Info: Order created: 1
 Info: Success response: {"statusCode":204,"message":"Your execution has been completed successfully","data":[]}
+Info: Category created: 1
+Info: Product created: 1
+Info: Customer created: 1
+Info: Order created: 1
+Info: Customer created: 1
+Info: Order created: 1
+Info: Customer created: 2
+Info: Category created: 1
+Info: Product created: 1
+Info: Category created: 2
+Info: Category created: 1
+Info: Product created: 1
+Info: Customer created: 1
+Info: Order created: 1
+Info: Success response: {"statusCode":200,"message":"Your execution has been completed successfully","data":{"orderId":1,"discounts":[{"discountReason":"BUY_5_GET_1","discountAmount":"15.25","subtotal":"175.35"}],"totalDiscount":"15.25","discountedTotal":"175.35"}}
+Info: Success response: {"statusCode":200,"message":"Your execution has been completed successfully","data":[]}
+Info: Customer created: 1
+Info: Order created: 1
+Info: Success response: {"statusCode":200,"message":"Your execution has been completed successfully","data":{"id":1,"customer":{"id":1,"name":"Garnet Roob II"},"items":[{"productId":20,"quantity":8,"unitPrice":"860.27","total":"597.64"}],"total":283.27}}
+Info: Customer created: 1
+Info: Category created: 1
+Info: Product created: 1
+Info: Order created: 1
+Info: Success response: {"statusCode":201,"message":"Your execution has been completed successfully","data":{"id":1,"customer":{"id":1,"name":"Ms. Tressie Beatty Sr."},"items":[{"productId":1,"quantity":2,"unitPrice":"10.99","total":"21.98"}],"total":21.98}}
+Info: Customer created: 1
+Info: Order created: 1
+Info: Success response: {"statusCode":204,"message":"Your execution has been completed successfully","data":[]}
