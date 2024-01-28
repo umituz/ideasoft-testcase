@@ -1,0 +1,8 @@
+Info: Email sent: 'Out_of_stock Warning: Product 'qui'' to 'admin@example.com'
+Info: Email sent: 'Low_stock Warning: Product 'corporis'' to 'admin@example.com'
+Error: Connection could not be established with host "mailhog2:10252": stream_socket_client(): php_network_getaddresses: getaddrinfo for mailhog2 failed: Name or service not known
+Error: Connection could not be established with host "mailhog2:10252": stream_socket_client(): php_network_getaddresses: getaddrinfo for mailhog2 failed: Name or service not known
+Info: Email sent: 'Out_of_stock Warning: Product 'qui'' to 'admin@example.com'
+Info: Email sent: 'Low_stock Warning: Product 'corporis'' to 'admin@example.com'
+Info: Email sent: 'Out_of_stock Warning: Product 'qui'' to 'admin@example.com'
+Info: Email sent: 'Low_stock Warning: Product 'corporis'' to 'admin@example.com'
