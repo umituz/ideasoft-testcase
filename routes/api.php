@@ -6,7 +6,7 @@ use App\Http\Controllers\Api\Order\OrderDiscountsController;
 use App\Http\Controllers\Api\Order\OrdersController;
 use Illuminate\Support\Facades\Route;
 
-Route::group(['prefix' => 'auth', 'as' => 'api.'], function () {
+Route::group(['prefix' => 'auth', 'as' => 'auth.'], function () {
     Route::post('/register', [RegisterController::class, 'register'])->name('register');
     Route::post('/login', [LoginController::class, 'login'])->name('login');
 });

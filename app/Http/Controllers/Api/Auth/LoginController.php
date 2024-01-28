@@ -28,6 +28,6 @@ class LoginController extends BaseController
 
         return array_key_exists('token', $data) ?
             $this->ok($data, __('User Logged In')) :
-            $this->error($data['errors'], $data['message']);
+            $this->validationWarning($data['errors'], $data['message']);
     }
 }

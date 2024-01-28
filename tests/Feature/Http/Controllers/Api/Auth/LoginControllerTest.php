@@ -13,8 +13,10 @@ class LoginControllerTest extends TestCase
     /** @test */
     public function it_can_successfully_login()
     {
-        $user = User::factory()->create();
-        $password = 'password'; // Change this with a valid password
+        $password = 'password';
+        $user = User::factory()->create([
+            'password' => bcrypt($password),
+        ]);
 
         $response = $this->postJson('/api/auth/login', [
             'email' => $user->email,
@@ -23,8 +25,16 @@ class LoginControllerTest extends TestCase
 
         $response->assertOk()
             ->assertJsonStructure([
-                'token',
-                // Add other expected structure fields if needed
+                'statusCode',
+                'message',
+                'data' => [
+                    'user' => [
+                        'id',
+                        'name',
+                        'email',
+                    ],
+                    'token',
+                ],
             ])
             ->assertJsonFragment(['message' => __('User Logged In')]);
     }
@@ -32,7 +42,10 @@ class LoginControllerTest extends TestCase
     /** @test */
     public function it_returns_error_for_invalid_login()
     {
-        $user = User::factory()->create();
+        $password = 'password';
+        $user = User::factory()->create([
+            'password' => bcrypt($password),
+        ]);
 
         $response = $this->postJson('/api/auth/login', [
             'email' => $user->email,
@@ -40,10 +53,11 @@ class LoginControllerTest extends TestCase
         ]);
 
         $response->assertStatus(422)
-            ->assertJsonStructure([
-                'errors' => ['email', 'password'],
-                'message',
-            ])
-            ->assertJsonFragment(['message' => __('Invalid credentials.')]);
+        ->assertJsonStructure([
+            'errors' => ['email', 'password'],
+            'message',
+            'statusCode'
+        ])
+            ->assertJsonFragment(['message' => __('Login Failed')]);
     }
 }

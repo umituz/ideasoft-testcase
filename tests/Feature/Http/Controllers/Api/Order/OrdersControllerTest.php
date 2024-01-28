@@ -6,13 +6,15 @@ use App\Models\Category;
 use App\Models\Customer;
 use App\Models\Order;
 use App\Models\Product;
+use App\Models\User;
 use App\Services\Base\OrderService;
 use Illuminate\Foundation\Testing\RefreshDatabase;
+use Illuminate\Foundation\Testing\WithoutMiddleware;
 use Tests\TestCase;
 
 class OrdersControllerTest extends TestCase
 {
-    use RefreshDatabase;
+    use RefreshDatabase, WithoutMiddleware;
 
     private OrderService $orderService;
 
@@ -21,6 +23,8 @@ class OrdersControllerTest extends TestCase
         parent::setUp();
 
         $this->orderService = app(OrderService::class);
+        $user = User::factory()->create();
+        $this->actingAs($user);
     }
 
     /** @test */

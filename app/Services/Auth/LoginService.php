@@ -32,10 +32,10 @@ class LoginService
                 'statusCode' => Response::HTTP_UNPROCESSABLE_ENTITY,
                 'errors' => [
                     'email' => __('The provided credentials are incorrect!'),
+                    'password' => __('The provided credentials are incorrect!'),
                 ],
                 'message' => __('Login Failed'),
             ];
-
         }
 
         $user = auth()->user();

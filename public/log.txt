@@ -222,3 +222,235 @@ Info: Error response: {"statusCode":401,"message":"Please, login and try again!"
 Info: Customer created: 1
 Info: Order created: 1
 Info: Error response: {"statusCode":401,"message":"Please, login and try again!","errors":[]}
+Info: Category created: 1
+Info: Product created: 1
+Info: Customer created: 1
+Info: Order created: 1
+Info: Customer created: 1
+Info: Order created: 1
+Info: Customer created: 2
+Info: Category created: 1
+Info: Product created: 1
+Info: Category created: 2
+Info: Success response: {"statusCode":200,"message":"User Logged In","data":{"user":{"id":1,"name":"Dr. Jefferey Bailey","email":"nlesch@example.net"},"token":"1|7LGX9twj0WZaLsxZgNdb2IiCyXJgwvJ7Pskno9BU97400a21"}}
+Info: Error response: {"statusCode":500,"message":"Login Failed","errors":{"email":"The provided credentials are incorrect!"}}
+Info: Category created: 1
+Info: Product created: 1
+Info: Customer created: 1
+Info: Order created: 1
+Info: Error response: {"statusCode":401,"message":"Please, login and try again!","errors":[]}
+Info: Error response: {"statusCode":401,"message":"Please, login and try again!","errors":[]}
+Info: Error response: {"statusCode":401,"message":"Please, login and try again!","errors":[]}
+Info: Customer created: 1
+Info: Order created: 1
+Info: Error response: {"statusCode":401,"message":"Please, login and try again!","errors":[]}
+Info: Customer created: 1
+Info: Category created: 1
+Info: Product created: 1
+Info: Error response: {"statusCode":401,"message":"Please, login and try again!","errors":[]}
+Info: Customer created: 1
+Info: Order created: 1
+Info: Error response: {"statusCode":401,"message":"Please, login and try again!","errors":[]}
+Info: Success response: {"statusCode":200,"message":"User Logged In","data":{"user":{"id":1,"name":"\u00dcmit UZ","email":"umituz998@gmail.com"},"token":"2|m37vggXaHVMglneAraALjtfGo3L2zSeuv2krffdQ5bcc1abd"}}
+Info: Success response: {"statusCode":200,"message":"User Created","data":{"id":2,"name":"\u00dcmit UZ","email":"umituz9999@gmail.com"}}
+Info: Category created: 1
+Info: Product created: 1
+Info: Customer created: 1
+Info: Order created: 1
+Info: Customer created: 1
+Info: Order created: 1
+Info: Customer created: 2
+Info: Category created: 1
+Info: Product created: 1
+Info: Category created: 2
+Info: Success response: {"statusCode":200,"message":"User Logged In","data":{"user":{"id":1,"name":"Libbie Effertz","email":"eorn@example.com"},"token":"1|6ceTeBzjaVOUVKZffwbqk07wQrmE2fNHGT3Rm2Jc5a3e45e6"}}
+Info: Error response: {"statusCode":500,"message":"Login Failed","errors":{"email":"The provided credentials are incorrect!"}}
+Info: Category created: 1
+Info: Product created: 1
+Info: Customer created: 1
+Info: Order created: 1
+Info: Error response: {"statusCode":401,"message":"Please, login and try again!","errors":[]}
+Info: Error response: {"statusCode":401,"message":"Please, login and try again!","errors":[]}
+Info: Success response: {"statusCode":200,"message":"Your execution has been completed successfully","data":[]}
+Info: Customer created: 1
+Info: Order created: 1
+Info: Success response: {"statusCode":200,"message":"Your execution has been completed successfully","data":{"id":1,"customer":{"id":1,"name":"Camilla Smith"},"items":[{"productId":21,"quantity":4,"unitPrice":"288.37","total":"377.30"}],"total":684.79}}
+Info: Customer created: 1
+Info: Category created: 1
+Info: Product created: 1
+Info: Order created: 1
+Info: Success response: {"statusCode":201,"message":"Your execution has been completed successfully","data":{"id":1,"customer":{"id":1,"name":"Ivory Christiansen"},"items":[{"productId":1,"quantity":2,"unitPrice":"10.99","total":"21.98"}],"total":21.98}}
+Info: Customer created: 1
+Info: Order created: 1
+Info: Success response: {"statusCode":204,"message":"Your execution has been completed successfully","data":[]}
+Info: Category created: 1
+Info: Product created: 1
+Info: Customer created: 1
+Info: Order created: 1
+Info: Customer created: 1
+Info: Order created: 1
+Info: Customer created: 2
+Info: Category created: 1
+Info: Product created: 1
+Info: Category created: 2
+Info: Success response: {"statusCode":200,"message":"User Logged In","data":{"user":{"id":1,"name":"Maxine Jaskolski","email":"justice.nienow@example.org"},"token":"1|QmyYzKAABlAK69wFMp33xaZ8wIInx0k4sPEWTDThf9c134dd"}}
+Info: Error response: {"statusCode":500,"message":"Login Failed","errors":{"email":"The provided credentials are incorrect!"}}
+Info: Category created: 1
+Info: Product created: 1
+Info: Customer created: 1
+Info: Order created: 1
+Info: Success response: {"statusCode":200,"message":"Your execution has been completed successfully","data":{"orderId":1,"discounts":[{"discountReason":"BUY_5_GET_1","discountAmount":"9.54","subtotal":"109.71"}],"totalDiscount":"9.54","discountedTotal":"109.71"}}
+Info: Error response: {"statusCode":404,"message":"Order with ID 999 not found.","errors":[]}
+Info: Success response: {"statusCode":200,"message":"Your execution has been completed successfully","data":[]}
+Info: Customer created: 1
+Info: Order created: 1
+Info: Success response: {"statusCode":200,"message":"Your execution has been completed successfully","data":{"id":1,"customer":{"id":1,"name":"Idella Bailey"},"items":[{"productId":52,"quantity":4,"unitPrice":"453.28","total":"871.29"},{"productId":98,"quantity":7,"unitPrice":"410.43","total":"311.35"},{"productId":46,"quantity":10,"unitPrice":"642.28","total":"494.90"}],"total":169.42}}
+Info: Customer created: 1
+Info: Category created: 1
+Info: Product created: 1
+Info: Order created: 1
+Info: Success response: {"statusCode":201,"message":"Your execution has been completed successfully","data":{"id":1,"customer":{"id":1,"name":"Jarret Maggio"},"items":[{"productId":1,"quantity":2,"unitPrice":"10.99","total":"21.98"}],"total":21.98}}
+Info: Customer created: 1
+Info: Order created: 1
+Info: Success response: {"statusCode":204,"message":"Your execution has been completed successfully","data":[]}
+Info: Category created: 1
+Info: Product created: 1
+Info: Customer created: 1
+Info: Order created: 1
+Info: Customer created: 1
+Info: Order created: 1
+Info: Customer created: 2
+Info: Category created: 1
+Info: Product created: 1
+Info: Category created: 2
+Info: Success response: {"statusCode":200,"message":"User Logged In","data":{"user":{"id":1,"name":"Ashtyn Predovic","email":"kobe.beatty@example.com"},"token":"1|w1c8vfkPB4mA65tfKrZdZFw7fP3QkDZGlGLID03Ce1904feb"}}
+Info: Error response: {"statusCode":500,"message":"Login Failed","errors":{"email":"The provided credentials are incorrect!"}}
+Info: Category created: 1
+Info: Product created: 1
+Info: Customer created: 1
+Info: Order created: 1
+Info: Success response: {"statusCode":200,"message":"Your execution has been completed successfully","data":{"orderId":1,"discounts":[{"discountReason":"BUY_5_GET_1","discountAmount":"5.20","subtotal":"59.85"}],"totalDiscount":"5.20","discountedTotal":"59.85"}}
+Info: Error response: {"statusCode":404,"message":"Order with ID 999 not found.","errors":[]}
+Info: Success response: {"statusCode":200,"message":"Your execution has been completed successfully","data":[]}
+Info: Customer created: 1
+Info: Order created: 1
+Info: Success response: {"statusCode":200,"message":"Your execution has been completed successfully","data":{"id":1,"customer":{"id":1,"name":"Dr. Kamren Thiel IV"},"items":[{"productId":33,"quantity":1,"unitPrice":"805.36","total":"733.50"},{"productId":49,"quantity":2,"unitPrice":"536.08","total":"417.07"},{"productId":44,"quantity":6,"unitPrice":"954.70","total":"618.50"}],"total":305.45}}
+Info: Customer created: 1
+Info: Category created: 1
+Info: Product created: 1
+Info: Order created: 1
+Info: Success response: {"statusCode":201,"message":"Your execution has been completed successfully","data":{"id":1,"customer":{"id":1,"name":"Glenna Becker"},"items":[{"productId":1,"quantity":2,"unitPrice":"10.99","total":"21.98"}],"total":21.98}}
+Info: Customer created: 1
+Info: Order created: 1
+Info: Success response: {"statusCode":204,"message":"Your execution has been completed successfully","data":[]}
+Info: Category created: 1
+Info: Product created: 1
+Info: Customer created: 1
+Info: Order created: 1
+Info: Customer created: 1
+Info: Order created: 1
+Info: Customer created: 2
+Info: Category created: 1
+Info: Product created: 1
+Info: Category created: 2
+Info: Success response: {"statusCode":200,"message":"User Logged In","data":{"user":{"id":1,"name":"Miss Nya Hane DVM","email":"dkuhn@example.org"},"token":"1|qMOPwozvgKC8wXvHrYfNx4ZL5nHak1oM0Ka4k1MXb7c548c0"}}
+Info: Error response: {"statusCode":500,"message":"Login Failed","errors":{"email":"The provided credentials are incorrect!"}}
+Info: Category created: 1
+Info: Product created: 1
+Info: Customer created: 1
+Info: Order created: 1
+Info: Success response: {"statusCode":200,"message":"Your execution has been completed successfully","data":{"orderId":1,"discounts":[{"discountReason":"BUY_5_GET_1","discountAmount":"11.58","subtotal":"133.17"}],"totalDiscount":"11.58","discountedTotal":"133.17"}}
+Info: Error response: {"statusCode":404,"message":"Order with ID 999 not found.","errors":[]}
+Info: Success response: {"statusCode":200,"message":"Your execution has been completed successfully","data":[]}
+Info: Customer created: 1
+Info: Order created: 1
+Info: Success response: {"statusCode":200,"message":"Your execution has been completed successfully","data":{"id":1,"customer":{"id":1,"name":"Donald Mohr"},"items":[{"productId":77,"quantity":4,"unitPrice":"83.84","total":"781.81"},{"productId":75,"quantity":1,"unitPrice":"600.98","total":"936.48"},{"productId":39,"quantity":1,"unitPrice":"606.24","total":"81.12"}],"total":74.26}}
+Info: Customer created: 1
+Info: Category created: 1
+Info: Product created: 1
+Info: Order created: 1
+Info: Success response: {"statusCode":201,"message":"Your execution has been completed successfully","data":{"id":1,"customer":{"id":1,"name":"Guadalupe Cartwright"},"items":[{"productId":1,"quantity":2,"unitPrice":"10.99","total":"21.98"}],"total":21.98}}
+Info: Customer created: 1
+Info: Order created: 1
+Info: Success response: {"statusCode":204,"message":"Your execution has been completed successfully","data":[]}
+Info: Category created: 1
+Info: Product created: 1
+Info: Customer created: 1
+Info: Order created: 1
+Info: Customer created: 1
+Info: Order created: 1
+Info: Customer created: 2
+Info: Category created: 1
+Info: Product created: 1
+Info: Category created: 2
+Info: Success response: {"statusCode":200,"message":"User Logged In","data":{"user":{"id":1,"name":"Matt Purdy","email":"anderson.jamar@example.com"},"token":"1|Qnr7UupQiPvuSvKVSvPycKV2nH13lxvYCaONAquU8b53ce4d"}}
+Info: Category created: 1
+Info: Product created: 1
+Info: Customer created: 1
+Info: Order created: 1
+Info: Success response: {"statusCode":200,"message":"Your execution has been completed successfully","data":{"orderId":1,"discounts":[{"discountReason":"BUY_5_GET_1","discountAmount":"11.50","subtotal":"132.20"}],"totalDiscount":"11.50","discountedTotal":"132.20"}}
+Info: Error response: {"statusCode":404,"message":"Order with ID 999 not found.","errors":[]}
+Info: Success response: {"statusCode":200,"message":"Your execution has been completed successfully","data":[]}
+Info: Customer created: 1
+Info: Order created: 1
+Info: Success response: {"statusCode":200,"message":"Your execution has been completed successfully","data":{"id":1,"customer":{"id":1,"name":"Dr. Elna Schmeler V"},"items":[{"productId":34,"quantity":1,"unitPrice":"413.32","total":"442.89"},{"productId":9,"quantity":6,"unitPrice":"724.17","total":"567.93"},{"productId":76,"quantity":8,"unitPrice":"105.92","total":"522.31"}],"total":529.56}}
+Info: Customer created: 1
+Info: Category created: 1
+Info: Product created: 1
+Info: Order created: 1
+Info: Success response: {"statusCode":201,"message":"Your execution has been completed successfully","data":{"id":1,"customer":{"id":1,"name":"Garrison Daugherty"},"items":[{"productId":1,"quantity":2,"unitPrice":"10.99","total":"21.98"}],"total":21.98}}
+Info: Customer created: 1
+Info: Order created: 1
+Info: Success response: {"statusCode":204,"message":"Your execution has been completed successfully","data":[]}
+Info: Success response: {"statusCode":200,"message":"User Logged In","data":{"user":{"id":1,"name":"Verlie O'Connell","email":"gmraz@example.org"},"token":"1|6guWzZnzLocxWVq9dmZGUFsdZlOOx6nn6f4ctysc687beedc"}}
+Info: Success response: {"statusCode":200,"message":"User Logged In","data":{"user":{"id":1,"name":"Josephine Heathcote","email":"ofarrell@example.net"},"token":"1|QVMM9wJf63xMOJVRHy1iVkUCuLB4dTvBH5FQiTmX53ef34f2"}}
+Info: Success response: {"statusCode":200,"message":"User Logged In","data":{"user":{"id":1,"name":"Dr. Enos Schinner I","email":"anderson.mathilde@example.org"},"token":"1|r89wPXerTigjfH7Dna6NpIQwDZ0pC7XAP614Fgz8dba03e33"}}
+Info: Success response: {"statusCode":200,"message":"User Logged In","data":{"user":{"id":1,"name":"Dejah Olson","email":"candelario98@example.org"},"token":"1|iKSFiWhrhq3G2A94Sm9xkQVkuVwdVk0Up9qzwpCscde80f11"}}
+Info: Success response: {"statusCode":200,"message":"User Logged In","data":{"user":{"id":1,"name":"Dr. Gaetano Bergnaum","email":"rchamplin@example.org"},"token":"1|7i6aN2k8gS4gCKacpknFto9gzB4MkmBE4XjgZxST46919fd9"}}
+Info: Success response: {"statusCode":200,"message":"User Logged In","data":{"user":{"id":1,"name":"Jamison Boyle MD","email":"saige.mckenzie@example.com"},"token":"1|NZtCKWlSqgU8Ogq0m7FrtbiONspSs7Q7h97fn4m17c180cd1"}}
+Info: Success response: {"statusCode":200,"message":"User Logged In","data":{"user":{"id":1,"name":"Abner Gutmann","email":"natalie67@example.org"},"token":"1|SF9y0qGerKTU4iLhupd3BZ77tXVMJ2VNwUVjbaZO710b5331"}}
+Info: Success response: {"statusCode":200,"message":"User Logged In","data":{"user":{"id":1,"name":"Graciela Kutch","email":"braden13@example.org"},"token":"1|2Zajy5iajSwMprQoDka0sa6jmo2kKbdTs71coY4S842e3570"}}
+Info: Success response: {"statusCode":200,"message":"User Logged In","data":{"user":{"id":1,"name":"Estel Ullrich","email":"daniel.sharon@example.net"},"token":"1|WNQ3FW1vbPcZKUE9Fs4rci6eZac90TlGuaSox40Zd160d925"}}
+Info: Success response: {"statusCode":200,"message":"User Logged In","data":{"user":{"id":1,"name":"Jaeden Okuneva","email":"rcremin@example.com"},"token":"1|aTM27ljZ070cubW1WeFFF9OpPRSkQqWSsJirEGlDbe7a29e0"}}
+Info: Success response: {"statusCode":200,"message":"User Logged In","data":{"user":{"id":1,"name":"Armani Hudson","email":"rosie.streich@example.org"},"token":"1|DDfGSiRUWh9gKb4u1N4bVzqEyJRzB66pBYQWkaKa2d8f81a6"}}
+Info: Error response: {"statusCode":500,"message":"Login Failed","errors":{"email":"The provided credentials are incorrect!"}}
+Info: Error response: {"statusCode":500,"message":"Login Failed","errors":{"email":"The provided credentials are incorrect!"}}
+Info: Success response: {"statusCode":200,"message":"User Logged In","data":{"user":{"id":1,"name":"\u00dcmit UZ","email":"umituz998@gmail.com"},"token":"3|6XRYQcd6o2A89z5QJFCAbGffDG2gWf8pOw3lomieee14c6c7"}}
+Info: Success response: {"statusCode":200,"message":"User Logged In","data":{"user":{"id":1,"name":"\u00dcmit UZ","email":"umituz998@gmail.com"},"token":"4|t78wURyyGbwQcxGXWgUdhF2o6wcUaOns4HnD6ZC2fd50c59d"}}
+Info: Error response: {"statusCode":422,"message":"Login Failed","errors":{"email":"The provided credentials are incorrect!"}}
+Info: Error response: {"statusCode":422,"message":"Login Failed","errors":{"email":"The provided credentials are incorrect!"}}
+Info: Error response: {"statusCode":422,"message":"Login Failed","errors":{"email":"The provided credentials are incorrect!"}}
+Info: Error response: {"statusCode":422,"message":"Login Failed","errors":{"email":"The provided credentials are incorrect!"}}
+Info: Error response: {"statusCode":422,"message":"Login Failed","errors":{"email":"The provided credentials are incorrect!"}}
+Info: Error response: {"statusCode":422,"message":"Login Failed","errors":{"email":"The provided credentials are incorrect!"}}
+Info: Error response: {"statusCode":422,"message":"Login Failed","errors":{"email":"The provided credentials are incorrect!","password":"The provided credentials are incorrect!"}}
+Info: Category created: 1
+Info: Product created: 1
+Info: Customer created: 1
+Info: Order created: 1
+Info: Customer created: 1
+Info: Order created: 1
+Info: Customer created: 2
+Info: Category created: 1
+Info: Product created: 1
+Info: Category created: 2
+Info: Success response: {"statusCode":200,"message":"User Logged In","data":{"user":{"id":1,"name":"Domenico Hagenes","email":"lee11@example.com"},"token":"1|XPn0ajfN1HX7PIoCdOpZ8Merbxh2ZRWFiERi8O4Mf2cb049b"}}
+Info: Error response: {"statusCode":422,"message":"Login Failed","errors":{"email":"The provided credentials are incorrect!","password":"The provided credentials are incorrect!"}}
+Info: Category created: 1
+Info: Product created: 1
+Info: Customer created: 1
+Info: Order created: 1
+Info: Success response: {"statusCode":200,"message":"Your execution has been completed successfully","data":{"orderId":1,"discounts":[{"discountReason":"BUY_5_GET_1","discountAmount":"3.85","subtotal":"44.30"}],"totalDiscount":"3.85","discountedTotal":"44.30"}}
+Info: Error response: {"statusCode":404,"message":"Order with ID 999 not found.","errors":[]}
+Info: Success response: {"statusCode":200,"message":"Your execution has been completed successfully","data":[]}
+Info: Customer created: 1
+Info: Order created: 1
+Info: Success response: {"statusCode":200,"message":"Your execution has been completed successfully","data":{"id":1,"customer":{"id":1,"name":"Rick Roob"},"items":[{"productId":22,"quantity":2,"unitPrice":"300.72","total":"573.81"},{"productId":13,"quantity":9,"unitPrice":"733.80","total":"772.38"},{"productId":55,"quantity":7,"unitPrice":"895.77","total":"192.88"}],"total":169.35}}
+Info: Customer created: 1
+Info: Category created: 1
+Info: Product created: 1
+Info: Order created: 1
+Info: Success response: {"statusCode":201,"message":"Your execution has been completed successfully","data":{"id":1,"customer":{"id":1,"name":"Mrs. Ebony Rempel Jr."},"items":[{"productId":1,"quantity":2,"unitPrice":"10.99","total":"21.98"}],"total":21.98}}
+Info: Customer created: 1
+Info: Order created: 1
+Info: Success response: {"statusCode":204,"message":"Your execution has been completed successfully","data":[]}
