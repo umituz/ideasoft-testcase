@@ -9,14 +9,11 @@ use App\Models\Product;
 
 class DiscountService
 {
-    private OrderService $orderService;
-
-    public function __construct(OrderService $orderService)
-    {
-        $this->orderService = $orderService;
-    }
-
-    public function applyDiscount($order)
+    /**
+     * @param $order
+     * @return DiscountResource
+     */
+    public function applyDiscount($order): DiscountResource
     {
         $totalAmount = $order->total;
 
@@ -29,7 +26,7 @@ class DiscountService
 
         $categoryDiscount = $this->applyCategoryDiscount($order);
         if ($categoryDiscount > 0) {
-            $discounts[] = $this->createDiscountItem('CATEGORY_DISCOUNT', $categoryDiscount, $totalAmount - $categoryDiscount);
+            $discounts[] = $this->createDiscountItem('BUY_5_GET_1', $categoryDiscount, $totalAmount - $categoryDiscount);
         }
 
         $totalDiscount = $customerDiscount + $categoryDiscount;
@@ -56,7 +53,11 @@ class DiscountService
         return 0;
     }
 
-    private function applyCategoryDiscount(Order $order)
+    /**
+     * @param Order $order
+     * @return float|int
+     */
+    private function applyCategoryDiscount(Order $order): float|int
     {
         $categories = $this->getCategoriesForOrder($order);
 
@@ -64,20 +65,42 @@ class DiscountService
 
         foreach ($categories as $categoryId => $quantity) {
             if ($quantity >= 6) {
-                $freeItemDiscount = floor($quantity / 6);
-                $categoryDiscount += $this->getCategoryItemPrice($categoryId) * $freeItemDiscount;
+                // İndirimli ürün sayısını hesapla (her 6 üründe bir ücretsiz)
+                $freeItemCount = floor($quantity / 6);
+
+                // İndirimli ürün miktarı kadar ücretsiz ürün fiyatını hesapla
+                $freeItemTotal = $this->getCategoryItemPrice($categoryId) * $freeItemCount;
+
+                // Toplam indirim tutarına ekle
+                $categoryDiscount += $freeItemTotal;
+
+                // Ücretsiz ürünlerin fiyatını toplam tutardan düş
+                $order->total -= $freeItemTotal;
             }
 
             if ($quantity >= 2) {
+                // Kategorideki ürünlerin en ucuzunu bul
                 $minPriceItem = $this->getMinPriceItem($categoryId);
-                $categoryDiscount += $minPriceItem->price * 0.20;
+
+                // İndirimli ürün miktarı kadar %20 indirim uygula
+                $discountedItemTotal = $minPriceItem->price * 0.20;
+
+                // Toplam indirim tutarına ekle
+                $categoryDiscount += $discountedItemTotal;
+
+                // %20 indirim uygulanan ürünlerin fiyatını toplam tutardan düş
+                $order->total -= $discountedItemTotal;
             }
         }
 
         return $categoryDiscount;
     }
 
-    private function getCategoriesForOrder(Order $order)
+    /**
+     * @param Order $order
+     * @return array
+     */
+    private function getCategoriesForOrder(Order $order): array
     {
         $items = json_decode($order->items, true);
         $categoryQuantities = [];
@@ -99,20 +122,33 @@ class DiscountService
         return $categoryQuantities;
     }
 
-
-    private function getCategoryItemPrice($categoryId)
+    /**
+     * @param $categoryId
+     * @return int
+     */
+    private function getCategoryItemPrice($categoryId): int
     {
         $product = Product::where('category_id', $categoryId)->first();
 
         return $product ? $product->price : 0;
     }
 
-    private function getMinPriceItem($categoryId)
+    /**
+     * @param $categoryId
+     * @return mixed
+     */
+    private function getMinPriceItem($categoryId): mixed
     {
         return Product::where('category_id', $categoryId)->orderBy('price', 'asc')->first();
     }
 
-    private function createDiscountItem($reason, $discountAmount, $subtotal)
+    /**
+     * @param $reason
+     * @param $discountAmount
+     * @param $subtotal
+     * @return array
+     */
+    private function createDiscountItem($reason, $discountAmount, $subtotal): array
     {
         return [
             'discountReason' => $reason,
