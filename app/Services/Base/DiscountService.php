@@ -3,6 +3,7 @@
 namespace App\Services\Base;
 
 use App\Enum\OrderEnum;
+use App\Http\Resources\DiscountResource;
 use App\Models\Order;
 use App\Models\Product;
 
@@ -35,12 +36,12 @@ class DiscountService
         $totalDiscount = $customerDiscount + $categoryDiscount;
         $discountedTotal = $totalAmount - $totalDiscount;
 
-        return [
+        return new DiscountResource([
             'orderId' => $orderId,
             'discounts' => $discounts,
             'totalDiscount' => number_format($totalDiscount, 2),
             'discountedTotal' => number_format($discountedTotal, 2),
-        ];
+        ]);
     }
 
     /**
