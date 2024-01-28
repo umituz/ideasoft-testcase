@@ -10,9 +10,11 @@ use Illuminate\Console\Command;
 class CheckProductStock extends Command
 {
     protected $signature = 'product:check-stock';
+
     protected $description = 'Check product stock and send warnings via email';
 
     private ProductService $productService;
+
     private MailService $mailService;
 
     public function __construct(ProductService $productService, MailService $mailService)

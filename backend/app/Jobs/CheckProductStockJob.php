@@ -13,6 +13,7 @@ class CheckProductStockJob implements ShouldQueue
     use InteractsWithQueue, SerializesModels;
 
     protected Product $product;
+
     protected MailService $mailService;
 
     public function __construct(Product $product, MailService $mailService)
@@ -30,14 +31,10 @@ class CheckProductStockJob implements ShouldQueue
         }
     }
 
-    /**
-     * @param $status
-     * @return void
-     */
     private function sendStockWarning($status): void
     {
         $to = 'admin@example.com';
-        $subject = ucfirst($status) . " Warning: Product '{$this->product->name}'";
+        $subject = ucfirst($status)." Warning: Product '{$this->product->name}'";
         $message = "Product '{$this->product->name}' is $status. Current stock: {$this->product->stock}";
 
         $this->mailService->send($to, $subject, $message);

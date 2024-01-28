@@ -12,7 +12,7 @@ class Product extends BaseModel
         'name',
         'category_id',
         'price',
-        'stock'
+        'stock',
     ];
 
     protected static function boot()
@@ -23,9 +23,6 @@ class Product extends BaseModel
         static::observe(ProductObserver::class);
     }
 
-    /**
-     * @return BelongsTo
-     */
     public function category(): BelongsTo
     {
         return $this->belongsTo(Category::class);

@@ -10,8 +10,6 @@ class OrderRequest extends FormRequest
 {
     /**
      * Get the validation rules that apply to the request.
-     *
-     * @return array
      */
     public function rules(): array
     {
@@ -28,8 +26,6 @@ class OrderRequest extends FormRequest
 
     /**
      * Get the validation messages that apply to the request.
-     *
-     * @return array
      */
     public function messages(): array
     {
@@ -51,8 +47,6 @@ class OrderRequest extends FormRequest
 
     /**
      * Get custom attributes for validator errors.
-     *
-     * @return array
      */
     public function attributes(): array
     {
@@ -79,8 +73,6 @@ class OrderRequest extends FormRequest
 
     /**
      * Validate the items using the ProductStockRule.
-     *
-     * @return array
      */
     private function validateItems(): array
     {

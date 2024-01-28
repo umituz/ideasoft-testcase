@@ -8,6 +8,6 @@ class CategoryObserver extends BaseObserver
 {
     public function created(Category $category)
     {
-        $this->logService->logInfo(__('Category created: ') . $category->id);
+        $this->logService->logInfo(__('Category created: ').$category->id);
     }
 }

@@ -8,6 +8,6 @@ class ProductObserver extends BaseObserver
 {
     public function created(Product $product)
     {
-        $this->logService->logInfo(__('Product created: ') . $product->id);
+        $this->logService->logInfo(__('Product created: ').$product->id);
     }
 }

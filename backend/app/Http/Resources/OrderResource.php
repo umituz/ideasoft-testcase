@@ -18,7 +18,7 @@ class OrderResource extends JsonResource
             'id' => $this->id,
             'customer' => new CustomerResource($this->customer),
             'items' => OrderItemResource::collection(json_decode($this->items)),
-            'total' => $this->total
+            'total' => $this->total,
         ];
     }
 }

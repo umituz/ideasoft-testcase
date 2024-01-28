@@ -15,10 +15,6 @@ class DiscountService
         $this->productService = $productService;
     }
 
-    /**
-     * @param $order
-     * @return DiscountResource
-     */
     public function applyDiscount($order): DiscountResource
     {
         $totalAmount = $order->total;
@@ -46,10 +42,6 @@ class DiscountService
         ]);
     }
 
-    /**
-     * @param $totalAmount
-     * @return float|int
-     */
     private function applyCustomerDiscount($totalAmount): float|int
     {
         if ($totalAmount >= DiscountEnum::MIN_DISCOUNT_AMOUNT) {
@@ -59,10 +51,6 @@ class DiscountService
         return 0;
     }
 
-    /**
-     * @param Order $order
-     * @return float|int
-     */
     private function applyCategoryDiscount(Order $order): float|int
     {
         $categories = $this->getCategoriesForOrder($order);
@@ -92,10 +80,6 @@ class DiscountService
         return $categoryDiscount;
     }
 
-    /**
-     * @param Order $order
-     * @return array
-     */
     private function getCategoriesForOrder(Order $order): array
     {
         $items = json_decode($order->items, true);
@@ -108,7 +92,7 @@ class DiscountService
             $product = $this->productService->find($productId);
             $categoryId = $product->category_id;
 
-            if (!isset($categoryQuantities[$categoryId])) {
+            if (! isset($categoryQuantities[$categoryId])) {
                 $categoryQuantities[$categoryId] = 0;
             }
 
@@ -118,29 +102,16 @@ class DiscountService
         return $categoryQuantities;
     }
 
-    /**
-     * @param $categoryId
-     * @return int
-     */
     private function getCategoryItemPrice($categoryId): int
     {
         return $this->productService->getCategoryItemPrice($categoryId);
     }
 
-    /**
-     * @param $categoryId
-     */
     private function getMinPriceItem($categoryId)
     {
         return $this->productService->getMinPriceItem($categoryId);
     }
 
-    /**
-     * @param $reason
-     * @param $discountAmount
-     * @param $subtotal
-     * @return array
-     */
     private function createDiscountItem($reason, $discountAmount, $subtotal): array
     {
         return [
