@@ -16,9 +16,8 @@ class DiscountService
         $this->orderService = $orderService;
     }
 
-    public function applyDiscount($orderId)
+    public function applyDiscount($order)
     {
-        $order = $this->orderService->find($orderId);
         $totalAmount = $order->total;
 
         $discounts = [];
@@ -37,7 +36,7 @@ class DiscountService
         $discountedTotal = $totalAmount - $totalDiscount;
 
         return new DiscountResource([
-            'orderId' => $orderId,
+            'orderId' => $order->id,
             'discounts' => $discounts,
             'totalDiscount' => number_format($totalDiscount, 2),
             'discountedTotal' => number_format($discountedTotal, 2),
