@@ -1,0 +1,46 @@
+Info: Category created: 1
+Info: Product created: 1
+Info: Category created: 1
+Info: Product created: 1
+Info: Customer created: 1
+Info: Order created: 1
+Info: Success response: {"statusCode":200,"message":"Your execution has been completed successfully","data":{"orderId":1,"discounts":[{"discountReason":"BUY_5_GET_1","discountAmount":"3.84","subtotal":"44.11"}],"totalDiscount":"3.84","discountedTotal":"44.11"}}
+Info: Success response: {"statusCode":200,"message":"Your execution has been completed successfully","data":[]}
+Info: Customer created: 1
+Info: Order created: 1
+Info: Success response: {"statusCode":200,"message":"Your execution has been completed successfully","data":{"id":1,"customer":{"id":1,"name":"Mr. Wilfred Christiansen"},"items":[{"productId":21,"quantity":7,"unitPrice":"702.40","total":"689.55"},{"productId":81,"quantity":6,"unitPrice":"338.78","total":"670.17"},{"productId":90,"quantity":7,"unitPrice":"615.10","total":"631.61"},{"productId":13,"quantity":4,"unitPrice":"372.17","total":"275.56"}],"total":558}}
+Info: Customer created: 1
+Info: Category created: 1
+Info: Product created: 1
+Info: Order created: 1
+Info: Success response: {"statusCode":201,"message":"Your execution has been completed successfully","data":{"id":1,"customer":{"id":1,"name":"Dr. Vern Greenholt MD"},"items":[{"productId":1,"quantity":2,"unitPrice":"10.99","total":"21.98"}],"total":21.98}}
+Info: Customer created: 1
+Info: Order created: 1
+Info: Success response: {"statusCode":204,"message":"Your execution has been completed successfully","data":[]}
+Info: Category created: 1
+Info: Product created: 1
+Info: Customer created: 1
+Info: Order created: 1
+Info: Customer created: 1
+Info: Order created: 1
+Info: Customer created: 2
+Info: Category created: 1
+Info: Product created: 1
+Info: Category created: 2
+Info: Category created: 1
+Info: Product created: 1
+Info: Customer created: 1
+Info: Order created: 1
+Info: Success response: {"statusCode":200,"message":"Your execution has been completed successfully","data":{"orderId":1,"discounts":[{"discountReason":"BUY_5_GET_1","discountAmount":"24.30","subtotal":"279.40"}],"totalDiscount":"24.30","discountedTotal":"279.40"}}
+Info: Success response: {"statusCode":200,"message":"Your execution has been completed successfully","data":[]}
+Info: Customer created: 1
+Info: Order created: 1
+Info: Success response: {"statusCode":200,"message":"Your execution has been completed successfully","data":{"id":1,"customer":{"id":1,"name":"Nils Kulas"},"items":[{"productId":46,"quantity":8,"unitPrice":"603.00","total":"217.31"},{"productId":65,"quantity":7,"unitPrice":"929.23","total":"119.84"},{"productId":39,"quantity":9,"unitPrice":"957.57","total":"169.82"},{"productId":78,"quantity":3,"unitPrice":"733.53","total":"423.38"},{"productId":38,"quantity":5,"unitPrice":"822.63","total":"831.48"}],"total":776.33}}
+Info: Customer created: 1
+Info: Category created: 1
+Info: Product created: 1
+Info: Order created: 1
+Info: Success response: {"statusCode":201,"message":"Your execution has been completed successfully","data":{"id":1,"customer":{"id":1,"name":"Friedrich Rempel"},"items":[{"productId":1,"quantity":2,"unitPrice":"10.99","total":"21.98"}],"total":21.98}}
+Info: Customer created: 1
+Info: Order created: 1
+Info: Success response: {"statusCode":204,"message":"Your execution has been completed successfully","data":[]}
