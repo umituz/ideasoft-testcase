@@ -26,6 +26,7 @@ jobs:
         with:
           commit_message: Fix code style
           skip_fetch: true
+
   backend:
     runs-on: ubuntu-latest
 
@@ -37,32 +38,26 @@ jobs:
         run: |
           sudo apt-get update
           sudo apt-get install -y docker-compose
-        working-directory: ./
 
       - name: Build and deploy Docker container
         run: |
-          cd backend
-          docker build -t backend-app -f Dockerfile .
+          docker build -t backend-app -f backend/Dockerfile backend
           docker run -d -p 8000:8000 --name backend-app backend-app
-        working-directory: ./
 
       - name: Wait for the container to start
         run: sleep 3
 
       - name: Create SQLite database
-        run: |
-          cd backend
-          touch database/database.sqlite
-        working-directory: ./
+        run: touch backend/database/database.sqlite
 
       - name: Test the application inside the Docker container
         run: |
           docker exec backend-app bash -c "
-            sed -i 's/DB_CONNECTION=mysql/DB_CONNECTION=sqlite/g' .env.testing &&
-            sed -i 's/DB_HOST=127.0.0.1/DB_HOST=:memory:/g' .env.testing &&
-            php artisan key:generate &&
-            php artisan migrate:fresh --seed --env=testing &&
-            php artisan test
+            sed -i 's/DB_CONNECTION=mysql/DB_CONNECTION=sqlite/g' backend/.env.testing &&
+            sed -i 's/DB_HOST=127.0.0.1/DB_HOST=:memory:/g' backend/.env.testing &&
+            php backend/artisan key:generate &&
+            php backend/artisan migrate:fresh --seed --env=testing &&
+            php backend/artisan test
           "
 
       - name: Check the application url

@@ -19,6 +19,7 @@ WORKDIR /
 COPY .env.example .env
 COPY . .
 
+RUN composer clear-cache
 RUN composer install
 RUN php artisan key:generate
 
