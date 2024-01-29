@@ -30,7 +30,7 @@ To interact with the Laravel container and perform database-related tasks, you c
 
 ``docker exec -it backend bash``
 
-You can reset the database and check the stocks of the products by following command. And also don't forget to execute jobs.
+You can reset the database, sync elasticsearch data and check the stocks of the products by following command. And also don't forget to execute jobs.
 
 ```
 php artisan setup

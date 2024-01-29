@@ -9974,24 +9974,24 @@
         },
         {
             "name": "vladimir-yuldashev/laravel-queue-rabbitmq",
-            "version": "v13.3.4",
-            "version_normalized": "13.3.4.0",
+            "version": "v13.3.5",
+            "version_normalized": "13.3.5.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/vyuldashev/laravel-queue-rabbitmq.git",
-                "reference": "03e10511426a00758129bd695f9a99c4a5470461"
+                "reference": "2fda5722bf2b3d77e448aabcccce8d88305bcdea"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/vyuldashev/laravel-queue-rabbitmq/zipball/03e10511426a00758129bd695f9a99c4a5470461",
-                "reference": "03e10511426a00758129bd695f9a99c4a5470461",
+                "url": "https://api.github.com/repos/vyuldashev/laravel-queue-rabbitmq/zipball/2fda5722bf2b3d77e448aabcccce8d88305bcdea",
+                "reference": "2fda5722bf2b3d77e448aabcccce8d88305bcdea",
                 "shasum": ""
             },
             "require": {
                 "ext-json": "*",
                 "illuminate/queue": "^9.0|^10.0",
                 "php": "^8.0",
-                "php-amqplib/php-amqplib": "^v3.5.2"
+                "php-amqplib/php-amqplib": "^v3.6"
             },
             "require-dev": {
                 "laravel/framework": "^9.0|^10.0",
@@ -10004,7 +10004,7 @@
             "suggest": {
                 "ext-pcntl": "Required to use all features of the queue consumer."
             },
-            "time": "2024-01-10T17:43:56+00:00",
+            "time": "2024-01-26T16:20:56+00:00",
             "type": "library",
             "extra": {
                 "branch-alias": {
@@ -10035,7 +10035,7 @@
             "description": "RabbitMQ driver for Laravel Queue. Supports Laravel Horizon.",
             "support": {
                 "issues": "https://github.com/vyuldashev/laravel-queue-rabbitmq/issues",
-                "source": "https://github.com/vyuldashev/laravel-queue-rabbitmq/tree/v13.3.4"
+                "source": "https://github.com/vyuldashev/laravel-queue-rabbitmq/tree/v13.3.5"
             },
             "install-path": "../vladimir-yuldashev/laravel-queue-rabbitmq"
         },

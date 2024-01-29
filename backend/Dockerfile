@@ -24,6 +24,7 @@ COPY public/media /public
 RUN composer clear-cache
 RUN composer install
 RUN php artisan key:generate
+RUN php artisan clear-compiled
 
 EXPOSE 8000
 
