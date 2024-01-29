@@ -23,7 +23,7 @@ class ProductResource extends JsonResource
             'thumbnail' => $this->getFirstMediaUrl(),
             'category' => $this->category?->name,
             'price' => $this->price,
-            'stock' => $this->stock
+            'stock' => $this->stock,
         ];
     }
 }
