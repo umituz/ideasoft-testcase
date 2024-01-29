@@ -39,4 +39,21 @@ php artisan product:check-stock
 php artisan queue:work
 ```
 
+## Test Execution
+
+To run the tests, you can use the following Artisan command inside the Laravel container:
+
+```bash
+docker exec -it backend bash
+php artisan test
+```
+
+## Test Coverage
+
+To generate a test coverage report, you can use the following Artisan command inside the Laravel container:
+
+```bash
+docker exec -it backend bash
+php artisan test --coverage-html=coverage
+```
 
