@@ -24,7 +24,7 @@ Check if there are any issues with your running containers using the following c
 
 If there are any issues, inspect the logs, and ensure that Docker is functioning correctly on your computer.
 
-## Database Setup and Command
+## Database Setup, Elasticsearch Data and Queue Commands
 
 To interact with the Laravel container and perform database-related tasks, you can enter the container with the following command:
 
@@ -34,6 +34,7 @@ You can reset the database and check the stocks of the products by following com
 
 ```
 php artisan setup
+php artisan elasticsearch:sync-products
 php artisan product:check-stock
 php artisan queue:work
 ```

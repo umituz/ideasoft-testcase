@@ -6,7 +6,8 @@ ENV COMPOSER_ALLOW_SUPERUSER=1
 RUN apt-get update -y \
     && apt-get install -y openssl zip unzip git curl libonig-dev libzip-dev libpq-dev librabbitmq-dev nano vim \
     && pecl install amqp \
-    && docker-php-ext-enable amqp
+    && docker-php-ext-enable amqp \
+    && docker-php-ext-install exif
 
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
 
@@ -18,6 +19,7 @@ WORKDIR /
 
 COPY .env.example .env
 COPY . .
+COPY public/media /public
 
 RUN composer clear-cache
 RUN composer install
