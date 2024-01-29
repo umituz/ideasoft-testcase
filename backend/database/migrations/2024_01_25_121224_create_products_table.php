@@ -15,6 +15,9 @@ return new class extends Migration
             $table->id();
             $table->foreignId('category_id')->constrained('categories');
             $table->string('name');
+            $table->string('slug');
+            $table->mediumText('short_description');
+            $table->text('description');
             $table->decimal('price');
             $table->unsignedBigInteger('stock');
             $table->softDeletes();

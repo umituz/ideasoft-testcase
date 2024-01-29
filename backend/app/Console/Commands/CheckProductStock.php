@@ -4,6 +4,7 @@ namespace App\Console\Commands;
 
 use App\Jobs\CheckProductStockJob;
 use App\Services\Base\ProductService;
+use App\Services\Database\DatabaseConnectionService;
 use App\Services\Mail\MailService;
 use Illuminate\Console\Command;
 
@@ -27,10 +28,23 @@ class CheckProductStock extends Command
 
     public function handle()
     {
+        $this->checkDatabase();
+
         $products = $this->productService->get();
 
         foreach ($products as $product) {
             dispatch(new CheckProductStockJob($product, $this->mailService));
+        }
+    }
+
+    public function checkDatabase()
+    {
+        try {
+            DatabaseConnectionService::getInstance();
+        } catch (\Exception $e) {
+            $this->error($e->getMessage());
+
+            exit(Command::FAILURE);
         }
     }
 }

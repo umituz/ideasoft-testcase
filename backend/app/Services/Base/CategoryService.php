@@ -2,6 +2,7 @@
 
 namespace App\Services\Base;
 
+use App\Http\Resources\CategoryResource;
 use App\Repositories\CategoryRepositoryInterface;
 
 class CategoryService
@@ -21,5 +22,12 @@ class CategoryService
     public function find($id)
     {
         return $this->categoryRepository->find($id);
+    }
+
+    public function getCategoryListResource()
+    {
+        $items = $this->categoryRepository->get();
+
+        return CategoryResource::collection($items);
     }
 }

@@ -10,4 +10,8 @@ interface ProductRepositoryInterface
     public function getCategoryItemPrice($categoryId);
 
     public function getMinPriceItem($categoryId);
+
+    public function getWithCategories();
+
+    public function getElasticsearchData($searchTerm);
 }

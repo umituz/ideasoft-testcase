@@ -2,13 +2,24 @@
 
 use App\Http\Controllers\Api\Auth\LoginController;
 use App\Http\Controllers\Api\Auth\RegisterController;
+use App\Http\Controllers\Api\Category\CategoriesController;
 use App\Http\Controllers\Api\Order\OrderDiscountsController;
 use App\Http\Controllers\Api\Order\OrdersController;
+use App\Http\Controllers\Api\Product\ProductsController;
 use Illuminate\Support\Facades\Route;
 
 Route::group(['prefix' => 'auth', 'as' => 'auth.'], function () {
     Route::post('/register', [RegisterController::class, 'register'])->name('register');
     Route::post('/login', [LoginController::class, 'login'])->name('login');
+});
+
+Route::group(['prefix' => 'categories', 'as' => 'categories.'], function () {
+    Route::get('/', [CategoriesController::class, 'index'])->name('index');
+});
+
+Route::group(['prefix' => 'products', 'as' => 'products.'], function () {
+    Route::get('/', [ProductsController::class, 'index'])->name('index');
+    Route::get('/{slug}', [ProductsController::class, 'show'])->name('show');
 });
 
 Route::group(['middleware' => 'auth:sanctum'], function () {

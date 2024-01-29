@@ -170,6 +170,8 @@ return [
         App\Providers\RouteServiceProvider::class,
         App\Providers\RepositoryServiceProvider::class,
         App\Providers\ResponseServiceProvider::class,
+        Laravel\Scout\ScoutServiceProvider::class,
+        Matchish\ScoutElasticSearch\ElasticSearchServiceProvider::class,
     ])->toArray(),
 
     /*

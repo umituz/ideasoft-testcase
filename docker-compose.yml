@@ -18,6 +18,19 @@ services:
     networks:
       - app
 
+  frontend:
+    container_name: 'frontend'
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_ENV=production
+    command: npm start
+    networks:
+      - app
+
   postgres:
     container_name: "postgres"
     image: postgres:latest

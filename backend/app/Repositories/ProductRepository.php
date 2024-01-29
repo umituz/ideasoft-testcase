@@ -29,4 +29,17 @@ class ProductRepository extends BaseRepository implements ProductRepositoryInter
     {
         return $this->product->where('category_id', $categoryId)->orderBy('price', 'asc')->first();
     }
+
+    public function getWithCategories()
+    {
+        return $this->product->with('category')->paginate(2);
+    }
+
+    public function getElasticsearchData($searchTerm)
+    {
+        return $this->product
+            ->search($searchTerm)
+            ->orderBy('id', 'desc')
+            ->paginate(5);
+    }
 }
